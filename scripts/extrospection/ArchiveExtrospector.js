@@ -1,16 +1,11 @@
-package com.xqk.extrospection;
-
-import java.util.Map;
-
 import com.xqk.CompressorDecompressor;
 import com.xqk.ProgressListener;
 import com.xqk.tmb.TrimodeBoolean;
 
-/** {@link Extrospector} implementation.
+/** {@link Extrospector} subclass.
  *
  */
-@SuppressWarnings("serial")
-public class ArchiveExtrospector implements Extrospector {
+class ArchiveExtrospector implements Extrospector {
     
     /**
      * The current {@link CompressorDecompressor}'s <code>ProgressListener</code> instance

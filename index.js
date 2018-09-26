@@ -1,47 +1,47 @@
 module.exports = {
     extrospection: {
-        x: require('./scripts/extrospection/ArchiveExtrospector'),
-        x: require('./scripts/extrospection/BilateralPseudoAwarenessAggressionFactor'),
-        x: require('./scripts/extrospection/Extrospector'),
+        ArchiveExtrospector: require('./scripts/extrospection/ArchiveExtrospector'),
+        BilateralPseudoAwarenessAggressionFactor: require('./scripts/extrospection/BilateralPseudoAwarenessAggressionFactor'),
+        Extrospector: require('./scripts/extrospection/Extrospector')
     },
     pellets: {
-        x: require('./scripts/pellets/Pellet'),
-        x: require('./scripts/pellets/Pelletizable'),
-        x: require('./scripts/pellets/R5CCompliant'),
+        Pellet: require('./scripts/pellets/Pellet'),
+        Pelletizable: require('./scripts/pellets/Pelletizable'),
+        R5CCompliant: require('./scripts/pellets/R5CCompliant')
 
     },
     plisteners: {
-        x: require('./scripts/plisteners/BasicProgressListener'),
-        x: require('./scripts/plisteners/CommandLineProgressListener'),
+        BasicProgressListener: require('./scripts/plisteners/BasicProgressListener'),
+        CommandLineProgressListener: require('./scripts/plisteners/CommandLineProgressListener')
     },
     pumpdump: {
-        x: require('./scripts/pumpdump/PumperDumper'),
-        x: require('./scripts/pumpdump/PumperDumperFactory'),
+        PumperDumper: require('./scripts/pumpdump/PumperDumper'),
+        PumperDumperFactory: require('./scripts/pumpdump/PumperDumperFactory')
     },
     shell: {
         pellets: {
-            x: require('./scripts/shell/pellets/CompressionPellet'),
-            x: require('./scripts/shell/pellets/FatwarePellet'),
-            x: require('./scripts/shell/pellets/OraclePelletAdapter'),
-            x: require('./scripts/shell/pellets/PelletFactory'),
-            x: require('./scripts/shell/pellets/PseudoPellet'),
-            x: require('./scripts/shell/pellets/SandersonPseudoPellet'),
-            x: require('./scripts/shell/pellets/TreePellet'),
+            CompressionPellet: require('./scripts/shell/pellets/CompressionPellet'),
+            FatwarePellet: require('./scripts/shell/pellets/FatwarePellet'),
+            OraclePelletAdapter: require('./scripts/shell/pellets/OraclePelletAdapter'),
+            PelletFactory: require('./scripts/shell/pellets/PelletFactory'),
+            PseudoPellet: require('./scripts/shell/pellets/PseudoPellet'),
+            SandersonPseudoPellet: require('./scripts/shell/pellets/SandersonPseudoPellet'),
+            TreePellet: require('./scripts/shell/pellets/TreePellet')
         },
         typeproviders: {
-            x: require('./scripts/shell/typeproviders/ClossonTypeProvider'),
-            x: require('./scripts/shell/typeproviders/FullertonTypeProvider'),
-            x: require('./scripts/shell/typeproviders/LivermoreTypeProvider'),
-            x: require('./scripts/shell/typeproviders/OCRTTypeProvider'),
+            ClossonTypeProvider: require('./scripts/shell/typeproviders/ClossonTypeProvider'),
+            FullertonTypeProvider: require('./scripts/shell/typeproviders/FullertonTypeProvider'),
+            LivermoreTypeProvider: require('./scripts/shell/typeproviders/LivermoreTypeProvider'),
+            OCRTTypeProvider: require('./scripts/shell/typeproviders/OCRTTypeProvider')
 
         },
-        x: require('./scripts/shell/HardshellOverlayInterjector'),
-        x: require('./scripts/shell/InvulnerabilityMatrix'),
+        HardshellOverlayInterjector: require('./scripts/shell/HardshellOverlayInterjector'),
+        InvulnerabilityMatrix: require('./scripts/shell/InvulnerabilityMatrix')
 
     },
     tmb: {
-        x: require('./scripts/tmb/TrimodeBoolean'),
-        x: require('./scripts/tmb/UnacceptableUnknowabilityError'),
+        TrimodeBoolean: require('./scripts/tmb/TrimodeBoolean'),
+        UnacceptableUnknowabilityError: require('./scripts/tmb/UnacceptableUnknowabilityError')
     },
     CompressorDecompressor: require('./scripts/CompressorDecompressor'),
     PayloadWrapper: require('./scripts/PayloadWrapper'),
