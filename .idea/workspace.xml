@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="047e56aa-94f8-4568-ad22-7fb0ae56adb0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.eslintrc.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/CompressorDecompressor.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/PayloadWrapper.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/ProgressListener.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/TypeProvider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/extrospection/ArchiveExtrospector.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/extrospection/BilateralPseudoAwarenessAggressionFactor.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/extrospection/Extrospector.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/pellets/Pellet.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/pellets/Pelletizable.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/pellets/R5CCompliant.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/plisteners/BasicProgressListener.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/plisteners/CommandLineProgressListener.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/pumpdump/PumperDumper.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/pumpdump/PumperDumperFactory.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/HardshellOverlayInterjector.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/InvulnerabilityMatrix.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/pellets/CompressionPellet.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/pellets/FatwarePellet.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/pellets/OraclePelletAdapter.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/pellets/PelletFactory.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/pellets/PseudoPellet.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/pellets/SandersonPseudoPellet.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/pellets/TreePellet.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/typeproviders/ClossonTypeProvider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/typeproviders/FullertonTypeProvider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/typeproviders/LivermoreTypeProvider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/shell/typeproviders/OCRTTypeProvider.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/tmb/TrimodeBoolean.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/tmb/UnacceptableUnknowabilityError.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/CompressorDecompressor.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/PayloadWrapper.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/ProgressListener.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/TypeProvider.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/extrospection/ArchiveExtrospector.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/extrospection/BilateralPseudoAwarenessAggressionFactor.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/extrospection/Extrospector.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/pellets/Pellet.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/pellets/Pelletizable.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/pellets/R5CCompliant.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/plisteners/BasicProgressListener.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/plisteners/CommandLineProgressListener.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/pumpdump/PumperDumper.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/pumpdump/PumperDumperFactory.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/HardshellOverlayInterjector.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/InvulnerabilityMatrix.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/pellets/CompressionPellet.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/pellets/FatwarePellet.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/pellets/OraclePelletAdapter.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/pellets/PelletFactory.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/pellets/PseudoPellet.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/pellets/SandersonPseudoPellet.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/pellets/TreePellet.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/typeproviders/ClossonTypeProvider.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/typeproviders/FullertonTypeProvider.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/typeproviders/LivermoreTypeProvider.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/shell/typeproviders/OCRTTypeProvider.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/tmb/TrimodeBoolean.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/tmb/UnacceptableUnknowabilityError.test.js" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1350">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1283" />
+    <option name="y" value="-6" />
+    <option name="width" value="1914" />
+    <option name="height" value="1029" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>ECMAScript 6 migration aidsJavaScript</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+          <State>
+            <id>TypeScript</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xqk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xqk" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xqk" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="extrospection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xqk" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="pellets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xqk" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="plisteners" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xqk" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="pumpdump" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xqk" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="shell" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xqk" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="tmb" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.npm/_npx/9563/lib/node_modules/create-react-app" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="047e56aa-94f8-4568-ad22-7fb0ae56adb0" name="Default" comment="" />
+      <created>1537848191838</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1537848191838</updated>
+      <workItem from="1537848193093" duration="3602000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3602000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="70" y="1" width="3771" height="2160" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24993303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/shell/typeproviders/FullertonTypeProvider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
