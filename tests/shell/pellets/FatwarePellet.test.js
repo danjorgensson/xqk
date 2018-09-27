@@ -3,13 +3,13 @@ package com.xqk.shell.pellets;
 import com.xqk.tmb.TrimodeBoolean;
 
 /**
- * Optimistic implementation of <code>CompressionPellet</code> which assumes a fatware
+ * Optimistic implementation of `CompressionPellet` which assumes a fatware
  * substrate in the hard-shell overlay.  
  */
 @SuppressWarnings("serial")
 public class FatwarePellet extends CompressionPellet {
     /**
-     * Embed modes supported by this<code> FatwarePellet</code> implementation
+     * Embed modes supported by this` FatwarePellet` implementation
      */
     public static enum EmbedMode {
         /**
@@ -33,7 +33,7 @@ public class FatwarePellet extends CompressionPellet {
     }
 
     /**
-     * The default <code>embedMode</code> if one is never specified.
+     * The default `embedMode` if one is never specified.
      */
     protected static final EmbedMode DEFAULT_EMBED_MODE = EmbedMode.FISCHER;
     
@@ -43,18 +43,18 @@ public class FatwarePellet extends CompressionPellet {
     protected EmbedMode embedMode = DEFAULT_EMBED_MODE;
     
     /**
-     * Construct a <code>FatwarePellet</code> with the default
-     * <code>embedMode</code> (<code>EmbedMode.FISCHER</code>)
+     * Construct a `FatwarePellet` with the default
+     * `embedMode` (`EmbedMode.FISCHER`)
      */
     public FatwarePellet() {
         super();
    }
     
     /**
-     * Construct a <code>FatwarePellet</code> with the specified
-     * <code>embedMode</code>
+     * Construct a `FatwarePellet` with the specified
+     * `embedMode`
      * 
-     * @param embedMode An <code>EmbedMode</code>
+     * @param embedMode An `EmbedMode`
      */
     protected FatwarePellet(EmbedMode embedMode) {
         super();
@@ -63,18 +63,18 @@ public class FatwarePellet extends CompressionPellet {
 }
 
     /**
-     * Get the <code>embedMose</code>
+     * Get the `embedMose`
      * 
-     * @return the <code>embedMode</code>
+     * @return the `embedMode`
      */
     protected EmbedMode getEmbedMode() {
         return embedMode;
     }
 
     /**
-     * Set the <code>embedMode</code>
+     * Set the `embedMode`
      * 
-     * @param embedMode the <code>embedMode</code> to set
+     * @param embedMode the `embedMode` to set
      */
     public void setEmbedMode(EmbedMode embedMode) {
         this.embedMode = embedMode;

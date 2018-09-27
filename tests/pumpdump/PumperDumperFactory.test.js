@@ -17,7 +17,7 @@ public class PumperDumperFactory {
      * Create a new {@link PumperDumper}, Hannaford-cloak it, and return it.
      * @param seq Sequential identifier; caller is responsible for ensuring it is unique
      * @param listener The current {@link ProgressListener}
-     * @throws IllegalArgumentException if <code>identifier</code> is not unique
+     * @throws IllegalArgumentException if `identifier` is not unique
      * @return A Hannafordized PD instance.
      */
     public static PumperDumper getPumperDumper(int seq, ProgressListener listener) {

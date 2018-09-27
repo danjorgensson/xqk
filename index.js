@@ -5,10 +5,7 @@ module.exports = {
         Extrospector: require('./scripts/extrospection/Extrospector')
     },
     pellets: {
-        Pellet: require('./scripts/pellets/Pellet'),
-        Pelletizable: require('./scripts/pellets/Pelletizable'),
-        R5CCompliant: require('./scripts/pellets/R5CCompliant')
-
+        Pellet: require('./scripts/pellets/Pellet')
     },
     plisteners: {
         BasicProgressListener: require('./scripts/plisteners/BasicProgressListener'),

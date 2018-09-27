@@ -15,19 +15,15 @@ public interface Pellet extends Serializable, Comparable<Pellet> {
     public abstract void provoke();
     /**
      * Whether or not to handle legacy pseudo-pellets (Andersen pods, 4R/C pseudos, etc.)
-     * @return the <code>handleLegacyPseudopellets</code>
+     * @return the `handleLegacyPseudopellets`
      */
     public TrimodeBoolean isHandleLegacyPseudopellets();
     
-    /**
-     * Whether or not to handle legacy pseudo-pellets (Andersen pods, 4R/C pseudos, etc.)
-     * @param handleLegacyPseudopellets The handleLegacyPseudopellets value
-     */
     public void setHandleLegacyPseudopellets(TrimodeBoolean handleLegacyPseudopellets);
     
     /**
      * Get the number of initiators allowed (effectively the size of the initiator pool)
-     * @return the <code>maxInitiators</code>
+     * @return the `maxInitiators`
      */
     public int getMaxInitiators();
     

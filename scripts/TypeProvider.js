@@ -16,7 +16,9 @@ class TypeProvider {
      * integrity, if any, of the fatware substrate.
      */
     finalizeSubstrateProlepticism(meshSize, interMatricize) {
-        throw new Error('I need to be implemented by a subclass.');
+        if (runtimeCache) {
+            runtimeCache.mesh(meshSize, true, false, interMatricize);
+        }
     }
     
     /**
@@ -26,3 +28,5 @@ class TypeProvider {
         throw new Error('I need to be implemented by a subclass.');
     }
 }
+
+module.exports = TypeProvider;

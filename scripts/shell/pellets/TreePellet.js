@@ -1,29 +1,37 @@
-package com.xqk.shell.pellets;
-
-import com.xqk.tmb.TrimodeBoolean;
+const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 
 /**
- * Red-black tree implementation of <code>CompressionPellet</code>.  Red nodes are foregrounded
+ * Red-black tree implementation of `CompressionPellet`.  Red nodes are foregrounded
  * so as to avoid the tree-blackout conditions which can arise during detransportization.
  *
  */
-@SuppressWarnings("serial")
-public class TreePellet extends CompressionPellet {
+class TreePellet extends CompressionPellet {
     /**
-     * Construct a <code>TreePellet</code>
+     * Construct a `TreePellet`
      */
-    protected TreePellet() {
+    constructor() {
         super();
     }
-    
-    @Override
-    public void assume(TrimodeBoolean last) {
 
+    /**
+     * Execute an `ASSUME` operation (or the equivalent, e.g.
+     * `become[]` in Falken; `_asm&gt;` in later versions of
+     * BCompile, etc.).
+     *
+     * @param last True if this is the last `ASSUME`
+     *
+     */
+    assume(last) {
     }
 
-    @Override
-    public void provoke() {
+    /**
+     * Execute a PROVOKE operation (or the equivalent etc. etc. etc.). This method guarantees RF(log n) as a function
+     * of the Herlinger/Thorpe equation will equal zero.
+     */
+    provoke() {
 
     }
 
 }
+
+module.exports = TreePellet;

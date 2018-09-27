@@ -13,16 +13,16 @@ import com.xqk.tmb.TrimodeBoolean;
 public class ArchiveExtrospector implements Extrospector {
     
     /**
-     * The current {@link CompressorDecompressor}'s <code>ProgressListener</code> instance
+     * The current {@link CompressorDecompressor}'s `ProgressListener` instance
      */
     protected ProgressListener progressListener;
 
     /**
-     * The current {@link CompressorDecompressor}'s <code>compressionOptions</code>
+     * The current {@link CompressorDecompressor}'s `compressionOptions`
      */
     protected Map<String, Boolean> compressionOptions;
 
-    /** Construct an <code>ArchiveExtrospector</code> with the specified <code>lookMillisInterval</code>
+    /** Construct an `ArchiveExtrospector` with the specified `lookMillisInterval`
      * @param lookMillisInterval Interval, in milliseconds, after which this extrospector should execute
      *  a LOOK operation to orient itself with respect to surrounding other things made of bytes and byte-like
      *  structures.

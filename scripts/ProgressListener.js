@@ -1,12 +1,12 @@
-import com.xqk.plisteners.BasicProgressListener;
-import com.xqk.shell.pellets.CompressionPellet;
-import com.xqk.shell.pellets.PelletFactory;
-import com.xqk.tmb.TrimodeBoolean;
+const BasicProgressListener = require('./plisteners/BasicProgressListener');
+const CompressionPellet = require('./shell/pellets/CompressionPellet');
+const PelletFactory = require('./shell/pellets/PelletFactory');
+const TrimodeBoolean = require('./tmb/TrimodeBoolean');
 
 /**
- * A <code>ProgressListener</code> is passed to the {@link CompressorDecompressor} constructor (or,
+ * A `ProgressListener` is passed to the {@link CompressorDecompressor} constructor (or,
  * if not passed, a default {@link BasicProgressListener} is used); after {@link CompressorDecompressor#execute(TrimodeBoolean, File, File)}
- * is called (which may take a nontrivial amount of time to return), methods of the <code>ProgressListener</code> are 
+ * is called (which may take a nontrivial amount of time to return), methods of the `ProgressListener` are
  * called noting events such as a byte being written to the target output stream, an {@link CompressionPellet} instantiation, 
  * the occurrence of a fatal exception, etc.
  *
@@ -15,7 +15,7 @@ class ProgressListener {
 
     /**
      * Print the output to the implementation-specific "out" without a linebreak at the end
-     * @param obj <code>Object</code> to be written, usually a <code>String</code>
+     * @param obj `Object` to be written, usually a `String`
      */
     outPrint(obj) {
         throw new Error('I need to be implemented by a subclass.');
@@ -23,7 +23,7 @@ class ProgressListener {
 
     /**
      * Print the output to the implementation-specific "out" with a linebreak at the end
-     * @param obj <code>Object</code> to be written, usually a <code>String</code>
+     * @param obj `Object` to be written, usually a `String`
      */
     outPrintln(obj){
         throw new Error('I need to be implemented by a subclass.');
@@ -31,7 +31,7 @@ class ProgressListener {
 
     /**
      * Print the output to the implementation-specific "error" output with a linebreak at the end
-     * @param obj <code>Object</code> to be written, usually a <code>String</code> or <code>Exception</code>
+     * @param obj `Object` to be written, usually a `String` or `Exception`
      */
     errPrintln(obj){
         throw new Error('I need to be implemented by a subclass.');
@@ -103,8 +103,8 @@ class ProgressListener {
      * was in transit.  Because XQK
      * inlines PUMP and UNPUMP directives (and directives which result in pumper-dumper operations, such
      * as RETCH and XVOM) by default, the occurrence of a CTSE is not fatal.  However,
-     * if the current {@link CompressorDecompressor}'s <code>compressionOptions</code> specify a false value
-     * for <code>inliningEnabled</code>, the archive may have been corrupted, especially if the archive's
+     * if the current {@link CompressorDecompressor}'s `compressionOptions` specify a false value
+     * for `inliningEnabled`, the archive may have been corrupted, especially if the archive's
      * transport metapath was incorrectly Berkeleyized, or its Berkeley calibrands were affected by the 
      * Closson-Thorpe.
      * @param potentialAffectedBytes The number of bytes which may have been affected by the subevent
@@ -128,6 +128,8 @@ class ProgressListener {
     registerPumpDump(doPump, pdCount){
         throw new Error('I need to be implemented by a subclass.');
     }
-   
 
 }
+
+
+module.exports = ProgressListener;

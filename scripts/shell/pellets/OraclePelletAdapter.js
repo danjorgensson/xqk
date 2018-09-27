@@ -1,29 +1,39 @@
-package com.xqk.shell.pellets;
-
-import com.xqk.tmb.TrimodeBoolean;
-
+const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 
 /**
- * <code>CompressionPellet</code> implementation which assumes an Oracle/Pirelli 2.0+ environment.
+ * `CompressionPellet` implementation which assumes an Oracle/Pirelli 2.0+ environment.
  *
  */
-@SuppressWarnings("serial")
-public class OraclePelletAdapter extends CompressionPellet {
+class OraclePelletAdapter extends CompressionPellet {
     /**
-     * Construct an <code>OraclePelletAdapter</code>
+     * Construct an `OraclePelletAdapter`
      */
-    protected OraclePelletAdapter() {
+    constructor() {
         super();
     }
 
-    @Override
-    public void assume(TrimodeBoolean last) {
 
+
+    /**
+     * Execute an `ASSUME` operation (or the equivalent, e.g.
+     * `become[]` in Falken; `_asm&gt;` in later versions of
+     * BCompile, etc.).
+     *
+     * @param last True if this is the last `ASSUME`
+     *
+     */
+    assume(last) {
     }
 
-    @Override
-    public void provoke() {
+    /**
+     * Execute a PROVOKE operation (or the equivalent etc. etc. etc.). This method guarantees RF(log n) as a function
+     * of the Herlinger/Thorpe equation will equal zero.
+     */
+    provoke() {
 
     }
 
 }
+
+
+module.exports = OraclePelletAdapter;

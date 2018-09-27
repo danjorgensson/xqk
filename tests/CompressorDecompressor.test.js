@@ -30,7 +30,7 @@ import com.xqk.tmb.TrimodeBoolean;
 
 /**
  * The core of XQK. Typical usage: instantiate a
- * <code>CompressorDecompressor</code>, then call its <code>execute</code>
+ * `CompressorDecompressor`, then call its `execute`
  * method to compress or decompress a file.
  */
 public class CompressorDecompressor {
@@ -127,9 +127,9 @@ public class CompressorDecompressor {
     public static final int DEFAULT_PELLET_CT = 2048;
 
     /**
-     * The length of a "tick"; after every <code>TICK_LENGTH_BYTES</code> bytes are
-     * written, <code>ProgressListener#progressTick()</code> is called. Note that
-     * <code>progressTick()</code> is deprecated.
+     * The length of a "tick"; after every `TICK_LENGTH_BYTES` bytes are
+     * written, `ProgressListener#progressTick()` is called. Note that
+     * `progressTick()` is deprecated.
      */
     public static final int TICK_LENGTH_BYTES = 2000000;
 
@@ -145,7 +145,7 @@ public class CompressorDecompressor {
     /**
      * The {@link ProgressListener} used if one is not supplied in a constructor
      * call. The default is a {@link BasicProgressListener} instance, which logs
-     * essential information to <code>System.out</code>.
+     * essential information to `System.out`.
      * 
      * @see ProgressListener
      * @see BasicProgressListener
@@ -153,10 +153,10 @@ public class CompressorDecompressor {
     protected static ProgressListener defaultProgressListener = new BasicProgressListener();
 
     /**
-     * A <code>Map</code> containing exactly three keys:
-     * <code>inliningEnabled</code> (true to inline all PUMP/UNPUMP directives),
-     * <code>spjEnabled</code> (true to enable subjective packet-jettisoning (SPJ)),
-     * and <code>bpaEnabled</code> (true to enable bilateral pseudo-awareness). If
+     * A `Map` containing exactly three keys:
+     * `inliningEnabled` (true to inline all PUMP/UNPUMP directives),
+     * `spjEnabled` (true to enable subjective packet-jettisoning (SPJ)),
+     * and `bpaEnabled` (true to enable bilateral pseudo-awareness). If
      * null or not specified, {@link #defaultCompressionOptions} are used.
      * 
      * @see #defaultCompressionOptions
@@ -175,12 +175,12 @@ public class CompressorDecompressor {
     protected ProgressListener progressListener;
 
     /**
-     * If set, the <code>Class</code>, a concrete {@link CompressionPellet} subclass,
+     * If set, the `Class`, a concrete {@link CompressionPellet} subclass,
      * of all pellet instences to be returned by calls to {@link PelletFactory}
      * getter methods. If null or not specified, the factory will return instances
-     * of optimal <code>CompressionPellet</code> subclasses based on current
+     * of optimal `CompressionPellet` subclasses based on current
      * conditions. While most users will want to rely on the factory to provide
-     * appropriate pellets, XQK provides several <code>CompressionPellet</code>
+     * appropriate pellets, XQK provides several `CompressionPellet`
      * subclasses which may suit user needs as well: {@link FatwarePellet} (often
      * used when strict Fullerton compatibility is required),
      * {@link OraclePelletAdapter}, {@link SandersonPseudoPellet} (the "traditional"
@@ -224,8 +224,8 @@ public class CompressorDecompressor {
     }
 
     /**
-     * Constructs a <code>CompressorDecompressor</code> with default
-     * <code>compressionOptions</code>, a {@link BasicProgressListener}, and a null
+     * Constructs a `CompressorDecompressor` with default
+     * `compressionOptions`, a {@link BasicProgressListener}, and a null
      * {@link #pelletFactoryOverrideClass}.
      * 
      * @see BasicProgressListener
@@ -235,16 +235,16 @@ public class CompressorDecompressor {
     }
 
     /**
-     * Constructs a <code>CompressorDecompressor</code> with the specified options
+     * Constructs a `CompressorDecompressor` with the specified options
      * and listener, and a null {@link #pelletFactoryOverrideClass}.
      * 
-     * @param compressionOptions If not null, a <code>Map</code> specifying which
+     * @param compressionOptions If not null, a `Map` specifying which
      *                           facilities of XQK should be enabled; the
-     *                           <code>Map</code> must contain three entries whose
-     *                           keys are <code>bpaEnabled</code> (true to enable
+     *                           `Map` must contain three entries whose
+     *                           keys are `bpaEnabled` (true to enable
      *                           bilateral pseudo-awareness),
-     *                           <code>inliningEnabled</code> (true to inline PUMP
-     *                           and UNPUMP directives), and <code>spjEnabled</code>
+     *                           `inliningEnabled` (true to inline PUMP
+     *                           and UNPUMP directives), and `spjEnabled`
      *                           (true to enable subjective packet-jettisoning
      *                           (SPJ)). If null, {@link #defaultCompressionOptions}
      *                           are used (which enables all three of these, which
@@ -259,19 +259,19 @@ public class CompressorDecompressor {
 
     /**
      * 
-     * Constructs a <code>CompressorDecompressor</code> with the specified options
+     * Constructs a `CompressorDecompressor` with the specified options
      * and listener, and a pellet class to be returned always by
      * {@link PelletFactory} getters.
      * 
-     * @param compressionOptions         If not null, a <code>Map</code> specifying
+     * @param compressionOptions         If not null, a `Map` specifying
      *                                   which facilities of XQK should be enabled;
-     *                                   the <code>Map</code> must contain three
+     *                                   the `Map` must contain three
      *                                   entries whose keys are
-     *                                   <code>bpaEnabled</code> (true to enable
+     *                                   `bpaEnabled` (true to enable
      *                                   bilateral pseudo-awareness),
-     *                                   <code>inliningEnabled</code> (true to
+     *                                   `inliningEnabled` (true to
      *                                   inline PUMP and UNPUMP directives), and
-     *                                   <code>spjEnabled</code> (true to enable
+     *                                   `spjEnabled` (true to enable
      *                                   subjective packet-jettisoning (SPJ)). If
      *                                   null, {@link #defaultCompressionOptions}
      *                                   are used (which enables all three of these,
@@ -279,10 +279,10 @@ public class CompressorDecompressor {
      * @param progressListener           If not null, a {@link ProgressListener}
      *                                   implementation instance. If null, a
      *                                   {@link BasicProgressListener} is used.
-     * @param pelletFactoryOverrideClass <code>Class</code> of the concrete
+     * @param pelletFactoryOverrideClass `Class` of the concrete
      *                                   {@link CompressionPellet} subclass, instances
      *                                   of which will always be returned by
-     *                                   <code>PelletFactory</code>. This value may
+     *                                   `PelletFactory`. This value may
      *                                   be null; if so, the factory will return the
      *                                   most appropriate type of pellet for given
      *                                   conditions.
@@ -298,12 +298,12 @@ public class CompressorDecompressor {
     private static int opsCount = 0;
 
     /**
-     * Compress or decompress a <code>File</code> to another <code>File</code>.
+     * Compress or decompress a `File` to another `File`.
      * Because of a quirk of XQK's implementation, source and destination files
      * generally must be in the same directory. Both the XQK desktop application and
      * the command-line parser enforce this (by not allowing users to choose a
      * destination file (the exception is Fairchild client-terminals, which always
-     * write all output of any kind to the <code>_OUT</code> subdirectory of the
+     * write all output of any kind to the `_OUT` subdirectory of the
      * user's home directory - the XQK GUI accounts for this). However, users of
      * this API may wish to write output to a file in a different directory from the
      * one where the source file is found, which is why this method allows for a

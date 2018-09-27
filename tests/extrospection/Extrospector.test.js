@@ -26,7 +26,7 @@ public interface Extrospector extends Serializable {
 
     /**
      * The compression options which will be used for this compression or decompression operation 
-     * (see {@link CompressorDecompressor}'s <code>compressionOptions</code> for details).
+     * (see {@link CompressorDecompressor}'s `compressionOptions` for details).
      * @param compressionOptions Compression options.  See {$link CompressorDecompressor#compressionOptions}. 
      *   Passing null will result in use of the {$link CompressorDecompressor.defaultCompressionOptions}.
      */
@@ -34,23 +34,23 @@ public interface Extrospector extends Serializable {
 
     /**
      * The {@link ProgressListener} used by the {@link CompressorDecompressor} instance with which this
-     * <code>Extrospector</code> is associated.
-     * @return The <code>ProgressListener</code>.
+     * `Extrospector` is associated.
+     * @return The `ProgressListener`.
      */
     public ProgressListener getProgressListener();
 
     /**
      * The {@link ProgressListener} used by the {@link CompressorDecompressor} instance with which this
-     * <code>Extrospector</code> is associated.
-     * @param progressListener The <code>ProgressListener</code> associated with the current compression or
+     * `Extrospector` is associated.
+     * @param progressListener The `ProgressListener` associated with the current compression or
      * decompression operation.
      */
     public void setProgressListener(ProgressListener progressListener);
 
     /**
      * The compression options which will be used for this compression or decompression operation 
-     * (see {@link CompressorDecompressor}'s <code>compressionOptions</code> for details).
-     * @return The compression-options <code>Map</code>
+     * (see {@link CompressorDecompressor}'s `compressionOptions` for details).
+     * @return The compression-options `Map`
      */
     public Map<String, Boolean> getCompressionOptions();
 

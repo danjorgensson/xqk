@@ -1,42 +1,20 @@
-package com.xqk.tmb;
-
 /**
  * Should be thrown when there is an unacceptably high level of uncertainty in the local state.
  *
  */
-@SuppressWarnings("serial")
-public class UnacceptableUnknowabilityException extends IllegalStateException {
+
+class UnacceptableUnknowabilityError extends Error {
 
     /**
-     * Construct an <code>UnacceptableUnknowabilityException</code>
-     */
-    public UnacceptableUnknowabilityException() {
-        super();
-    }
-
-    /**
-     * Construct an <code>UnacceptableUnknowabilityException</code> with the specified message
-     * @param s The message
-     */
-    public UnacceptableUnknowabilityException(String s) {
-        super(s);
-    }
-
-    /**
-     * Construct an <code>UnacceptableUnknowabilityException</code> with the specified cause.
-     * @param cause The cause
-     */
-    public UnacceptableUnknowabilityException(Throwable cause) {
-        super(cause);
-    }
-
-    /**
-     * Construct an <code>UnacceptableUnknowabilityException</code> with the specified message and cause.
+     * Construct an `UnacceptableUnknowabilityError` with the specified message.
      * @param message The message
-     * @param cause The cause
      */
-    public UnacceptableUnknowabilityException(String message, Throwable cause) {
-        super(message, cause);
+    constructor(message) {
+        super();
+        this.message = message;
     }
 
 }
+
+
+module.exports = UnacceptableUnknowabilityError;

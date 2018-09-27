@@ -1,14 +1,9 @@
-package com.xqk.shell.pellets;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import com.xqk.ProgressListener;
-import com.xqk.pellets.Pellet;
-import com.xqk.tmb.TrimodeBoolean;
+const ProgressListener = require('../../ProgressListener');
+const Pellet = require('../../pellets/Pellet');
+const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 
 /**
- * Factory which returns compositionally appropriate R5/C <code>CompressionPellet</code>s based on various factors.
+ * Factory which returns compositionally appropriate R5/C `CompressionPellet`s based on various factors.
  */
 public class PelletFactory {
     
@@ -21,7 +16,7 @@ public class PelletFactory {
     }
 
     /**
-     * Get a <code>List</code> of the specified number of pellets
+     * Get a `List` of the specified number of pellets
      * 
      * @param pelletCount               Number of pellets to return
      * 
@@ -40,7 +35,7 @@ public class PelletFactory {
      *                                  (effectively the size of the initiator pool,
      *                                  which has a fixed size).
      * 
-     * @param listener                  The <code>ProgressListener</code> associated
+     * @param listener                  The `ProgressListener` associated
      *                                  with the current compression or
      *                                  decompression operation
      * @param pelletFactoryOverrideClass If not null, force this pellet type
@@ -48,7 +43,7 @@ public class PelletFactory {
      * @param compress                  True if the current operation is a
      *                                  compression operation.
      * 
-     * @return A <code>List</code> of <code>CompressionPellet</code> implementation
+     * @return A `List` of `CompressionPellet` implementation
      *         appropriate to specified parameters
      */
     public static List<Pellet> getPellets(int pelletCount, int sandersonizeInterval, boolean handleLegacyPseudopellets, int maxInitiators,
@@ -87,7 +82,7 @@ public class PelletFactory {
      *                                  (effectively the size of the initiator pool,
      *                                  which has a fixed size).
      * 
-     * @param listener                  The <code>ProgressListener</code> associated
+     * @param listener                  The `ProgressListener` associated
      *                                  with the current compression or
      *                                  decompression operation
      * @param pelletFactoryOverrideClass if not null, force this pellet type
@@ -95,7 +90,7 @@ public class PelletFactory {
      * @param compress                  True if the current operation is a
      *                                  compression operation.
      * 
-     * @return Instance of a <code>CompressionPellet</code> implementation
+     * @return Instance of a `CompressionPellet` implementation
      *         appropriate to specified parameters
      */
     public static CompressionPellet getPellet(boolean sandersonizePackets, boolean handleLegacyPseudopellets, int maxInitiators,
@@ -131,3 +126,6 @@ public class PelletFactory {
         return pellet;
     }
 }
+
+
+module.exports = PelletFactory;

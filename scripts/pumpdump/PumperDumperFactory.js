@@ -1,6 +1,4 @@
-package com.xqk.pumpdump;
-
-import com.xqk.ProgressListener;
+const ProgressListener = require('../ProgressListener');
 
 /**
  * Factory which returns new {@link PumperDumper} instances.  Calls to {@link #getPumperDumper(int, ProgressListener)}
@@ -9,7 +7,7 @@ import com.xqk.ProgressListener;
  * @see PumperDumper
  *
  */
-public class PumperDumperFactory {
+class PumperDumperFactory {
     
     private PumperDumperFactory() {}
     
@@ -17,11 +15,14 @@ public class PumperDumperFactory {
      * Create a new {@link PumperDumper}, Hannaford-cloak it, and return it.
      * @param seq Sequential identifier; caller is responsible for ensuring it is unique
      * @param listener The current {@link ProgressListener}
-     * @throws IllegalArgumentException if <code>identifier</code> is not unique
+     * @throws IllegalArgumentException if `identifier` is not unique
      * @return A Hannafordized PD instance.
      */
-    public static PumperDumper getPumperDumper(int seq, ProgressListener listener) {
+    getPumperDumper(seq, listener) {
+        // Just return a new instance for now; we need to revisit this after the Prague meetings:
         return new PumperDumper(listener);
     }
-    
 }
+
+
+module.exports = PumperDumperFactory;

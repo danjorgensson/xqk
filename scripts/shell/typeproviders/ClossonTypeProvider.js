@@ -1,20 +1,24 @@
-package com.xqk.shell.typeproviders;
-
-import com.xqk.TypeProvider;
-import com.xqk.tmb.TrimodeBoolean;
+const TypeProvider = require('../../TypeProvider');
+const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 
 /**
- * <code>TypeProvider</code> offering all Closson Meetings (2013) functionality.  This implementation should
- * also be the choice for most matrices requiring OCRT compliance, since <code>OCRTTypeProvider</code> has been 
+ * `TypeProvider` offering all Closson Meetings (2013) functionality.  This implementation should
+ * also be the choice for most matrices requiring OCRT compliance, since `OCRTTypeProvider` has been
  * deprecated.
  * @see OCRTTypeProvider
  *
  */
-public class ClossonTypeProvider implements TypeProvider {
+class ClossonTypeProvider extends TypeProvider {
 
-    @Override
-    public void provide() {
-        TypeProvider.finalizeSubstrateProlepticism(1024, new TrimodeBoolean(true));
+    /**
+     * Provide extrospective matricicity (inter-matricized or Prague-type) to the {@link InvulnerabilityMatrix}.
+     */
+    provide() {
+        super.finalizeSubstrateProlepticism(1024, new TrimodeBoolean(true));
     }
 
 }
+
+
+module.exports = ClossonTypeProvider;
+

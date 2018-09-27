@@ -4,7 +4,7 @@ import com.xqk.TypeProvider;
 import com.xqk.tmb.TrimodeBoolean;
 
 /**
- * <code>TypeProvider</code> implementation providing strict Fullerton Rules tolerances.  In cases where FR-level
+ * `TypeProvider` implementation providing strict Fullerton Rules tolerances.  In cases where FR-level
  * tolerances are not called for, this provider is likely to be a poor choice because Timmy wrote most of it and
  * he's no longer even with us.
  *

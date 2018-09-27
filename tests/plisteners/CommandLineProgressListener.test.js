@@ -9,7 +9,7 @@ import com.xqk.ProgressListener;
 import com.xqk.Xqk;
 
 /**
- * The <code>ProgressListener</code> used by the command-line parser ({@link Xqk}). <b>This class is not part of the 
+ * The `ProgressListener` used by the command-line parser ({@link Xqk}). <b>This class is not part of the
  * XQK API, but may be useful for reference.</b>
  *
  */
@@ -23,15 +23,15 @@ public class CommandLineProgressListener implements ProgressListener {
     
     private int markerCounter = 0;
 
-    /** Construct a <code>CommandLineProgressListener</code>
-     * @param outPrintStream A <code>PrintStream</code> such as <code>System.out</code> to which output will be written, for example
+    /** Construct a `CommandLineProgressListener`
+     * @param outPrintStream A `PrintStream` such as `System.out` to which output will be written, for example
      * by {@link CommandLineProgressListener#outPrintln(Object)}
-     * @param errPrintStream A <code>PrintStream</code> such as <code>System.err</code> to which output will be written, for example
+     * @param errPrintStream A `PrintStream` such as `System.err` to which output will be written, for example
      * by {@link CommandLineProgressListener#errPrintln(Object)}
-     * @param logPrefix String to precede messages printed to <code>outPrintStream</code> or <code>errPrintStream</code>
-     * @param percentFormat A <code>NumberFormat</code> suited to formatting percentages (such as compression ratios expressed as a
+     * @param logPrefix String to precede messages printed to `outPrintStream` or `errPrintStream`
+     * @param percentFormat A `NumberFormat` suited to formatting percentages (such as compression ratios expressed as a
      * percentage)
-     * @param numberFormat A <code>NumberFormat</code> suited to formatting decimals
+     * @param numberFormat A `NumberFormat` suited to formatting decimals
      */
     public CommandLineProgressListener(PrintStream outPrintStream, PrintStream errPrintStream, String logPrefix,
         NumberFormat percentFormat, NumberFormat numberFormat) {

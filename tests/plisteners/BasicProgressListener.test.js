@@ -12,7 +12,7 @@ import com.xqk.ProgressListener;
  * constructor. Many methods of this implementation are no-ops; the exceptions are the logging-related methods 
  * ({@link #outPrint(Object)}, {@link #outPrintln(Object)}, and {@link #errPrintln(Object)}), as well as 
  * {@link #notifyClossonThorpeSubevent(int, boolean)} (which notifies the user of the Closson-Thorpe via a call 
- * to {@link #outPrintln(Object)}) and {@link #signalFatalException}, which simply throws a <code>RuntimeException</code>
+ * to {@link #outPrintln(Object)}) and {@link #signalFatalException}, which simply throws a `RuntimeException`
  * with the fatal exception as its cause.  Consumers of the XQK API are encouraged to implement their own
  * {@link ProgressListener}.
  *
@@ -25,7 +25,7 @@ public class BasicProgressListener implements ProgressListener {
     private static String logPrefix = "";
     
     /**
-     * Instantiate a <code>BasicProgressListener</code>
+     * Instantiate a `BasicProgressListener`
      */
     public BasicProgressListener() {
         super();
@@ -33,21 +33,21 @@ public class BasicProgressListener implements ProgressListener {
 
 
     /**
-     * Passes <code>obj</code> to <code>System.out.print</code>
+     * Passes `obj` to `System.out.print`
      */
     public void outPrint(Object obj) {
         systemOut.print(obj);
     }
 
     /**
-     * Passes <code>obj</code> to <code>System.out.println</code>
+     * Passes `obj` to `System.out.println`
      */
     public void outPrintln(Object obj) {
         systemOut.println(logPrefix + obj);
     }
 
     /**
-     * Passes <code>obj</code> to <code>System.err.println</code>
+     * Passes `obj` to `System.err.println`
      */
     public void errPrintln(Object obj) {
         systemErr.println(logPrefix + obj);
@@ -87,7 +87,7 @@ public class BasicProgressListener implements ProgressListener {
     }
 
     /**
-     * Throws a <code>RuntimeException</code> with <code>exception</code> as its cause.
+     * Throws a `RuntimeException` with `exception` as its cause.
      */
     public void signalFatalException(Exception exception) {
         throw new RuntimeException(exception);
@@ -110,7 +110,7 @@ public class BasicProgressListener implements ProgressListener {
     }
 
     /**
-     * Logs the queuing of the directive to <code>System.out</code>, with a timestamp for obvious reasons.
+     * Logs the queuing of the directive to `System.out`, with a timestamp for obvious reasons.
      */
     public void registerPumpDump(boolean doPump, int pdCount) {
         this.outPrintln("");        

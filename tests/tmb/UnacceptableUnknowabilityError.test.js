@@ -8,14 +8,14 @@ package com.xqk.tmb;
 public class UnacceptableUnknowabilityException extends IllegalStateException {
 
     /**
-     * Construct an <code>UnacceptableUnknowabilityException</code>
+     * Construct an `UnacceptableUnknowabilityException`
      */
     public UnacceptableUnknowabilityException() {
         super();
     }
 
     /**
-     * Construct an <code>UnacceptableUnknowabilityException</code> with the specified message
+     * Construct an `UnacceptableUnknowabilityException` with the specified message
      * @param s The message
      */
     public UnacceptableUnknowabilityException(String s) {
@@ -23,7 +23,7 @@ public class UnacceptableUnknowabilityException extends IllegalStateException {
     }
 
     /**
-     * Construct an <code>UnacceptableUnknowabilityException</code> with the specified cause.
+     * Construct an `UnacceptableUnknowabilityException` with the specified cause.
      * @param cause The cause
      */
     public UnacceptableUnknowabilityException(Throwable cause) {
@@ -31,7 +31,7 @@ public class UnacceptableUnknowabilityException extends IllegalStateException {
     }
 
     /**
-     * Construct an <code>UnacceptableUnknowabilityException</code> with the specified message and cause.
+     * Construct an `UnacceptableUnknowabilityException` with the specified message and cause.
      * @param message The message
      * @param cause The cause
      */

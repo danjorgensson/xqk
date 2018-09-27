@@ -1,128 +1,114 @@
-package com.xqk.plisteners;
-
-import java.io.File;
-import java.io.PrintStream;
-import java.util.Date;
-
-import com.xqk.CompressorDecompressor;
-import com.xqk.ProgressListener;
+const CompressorDecompressor = require('../CompressorDecompressor');
+const ProgressListener = require('../ProgressListener');
 
 /**
  * Implementation of {@link ProgressListener} used if no listener is passed to the {@link CompressorDecompressor} 
  * constructor. Many methods of this implementation are no-ops; the exceptions are the logging-related methods 
  * ({@link #outPrint(Object)}, {@link #outPrintln(Object)}, and {@link #errPrintln(Object)}), as well as 
  * {@link #notifyClossonThorpeSubevent(int, boolean)} (which notifies the user of the Closson-Thorpe via a call 
- * to {@link #outPrintln(Object)}) and {@link #signalFatalException}, which simply throws a <code>RuntimeException</code>
+ * to {@link #outPrintln(Object)}) and {@link #signalFatalException}, which simply throws a `RuntimeException`
  * with the fatal exception as its cause.  Consumers of the XQK API are encouraged to implement their own
  * {@link ProgressListener}.
  *
  */
-public class BasicProgressListener implements ProgressListener {
+class BasicProgressListener extends ProgressListener {
 
-    
-    private static PrintStream systemOut = System.out;
-    private static PrintStream systemErr = System.err;
-    private static String logPrefix = "";
-    
+
     /**
-     * Instantiate a <code>BasicProgressListener</code>
+     * Instantiate a `BasicProgressListener`
      */
-    public BasicProgressListener() {
+    constructor () {
         super();
     }
 
 
     /**
-     * Passes <code>obj</code> to <code>System.out.print</code>
+     * Passes `obj` to `console.info`
      */
-    public void outPrint(Object obj) {
-        systemOut.print(obj);
+    outPrint(obj) {
+        console.info(obj);
     }
 
     /**
-     * Passes <code>obj</code> to <code>System.out.println</code>
+     * Passes `obj` to `console.info`
      */
-    public void outPrintln(Object obj) {
-        systemOut.println(logPrefix + obj);
+    outPrintln(obj) {
+        console.info(obj);
     }
 
     /**
-     * Passes <code>obj</code> to <code>System.err.println</code>
+     * Passes `obj` to `console.error`
      */
-    public void errPrintln(Object obj) {
-        systemErr.println(logPrefix + obj);
+    errPrintln(obj) {
+        console.error(obj);
     }
 
     /**
      * <b>No-op for this implementation.</b>
-     * {@inheritDoc}
      */
-    public void notifyExpectedTotalBytes(long bytes) {
+    notifyExpectedTotalBytes(bytes) {
         // the CL listener doesn't use this value
     }
 
     /**
      * <b>No-op for this implementation.</b>
-     * {@inheritDoc}
      */
-    public void notifyBytesWritten(long bytes) {
+    notifyBytesWritten(bytes) {
         // the CL listener doesn't use this value
     }
 
     /**
      * <b>No-op for this implementation.</b>
-     * {@inheritDoc}
      * @deprecated
      */
-    public void progressTick() {
+    progressTick() {
         // Noop for this basic listener
     }
 
     /**
      * <b>No-op for this implementation.</b>
-     * {@inheritDoc}
      */
-    public void notifyStartOperation(boolean compress) {
+    notifyStartOperation(compress) {
         // Noop for this basic listener
     }
 
     /**
-     * Throws a <code>RuntimeException</code> with <code>exception</code> as its cause.
+     * Rethrows the error for this impl.
      */
-    public void signalFatalException(Exception exception) {
-        throw new RuntimeException(exception);
+    signalFatalException(error) {
+        throw e;
     }
 
     /**
      * <b>No-op for this implementation.</b>
-     * {@inheritDoc}
      */
-    public void notifyOperationComplete(File destFile) {
+    notifyOperationComplete(destFile) {
         // Noop for this basic listener
     }
 
     /**
      * <b>No-op for this implementation.</b>
-     * {@inheritDoc}
      */
-    public void registerPellet(long seqId) {
+    registerPellet(seqId) {
         // Noop for this basic listener
     }
 
     /**
-     * Logs the queuing of the directive to <code>System.out</code>, with a timestamp for obvious reasons.
+     * Logs the queuing of the directive to `System.out`, with a timestamp for obvious reasons.
      */
-    public void registerPumpDump(boolean doPump, int pdCount) {
-        this.outPrintln("");        
-        this.outPrintln((doPump ? "PUMP" : "UNPUMP") + "ed at " + new Date());        
+    registerPumpDump(doPump, pdCount) {
+        this.outPrintln('');
+        this.outPrintln((doPump ? 'PUMP' : 'UNPUMP') + 'ed at ' + new Date());
     }
 
 
     /**
      * <b>No-op for this implementation.</b>
-     * {@inheritDoc}
      */
-    public void notifyClossonThorpeSubevent(int potentialAffectedBytes, boolean fatal) {
+    notifyClossonThorpeSubevent(potentialAffectedBytes, fatal) {
         // Noop for this basic listener
     }
 }
+
+
+module.exports = BasicProgressListener;

@@ -1,16 +1,18 @@
-package com.xqk.shell.pellets;
-
-import com.xqk.tmb.TrimodeBoolean;
+const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 
 /**
- * Partial <code>CompressionPellet</code> implementation; use subclass
+ * Partial `CompressionPellet` implementation; use subclass
  * {@link SandersonPseudoPellet} when pseudo-pellets are required.
  */
-@SuppressWarnings("serial")
-public abstract class PseudoPellet extends CompressionPellet {
-    
-    @Override
-    public void assume(TrimodeBoolean last) {
+class PseudoPellet extends CompressionPellet {
+
+    /**
+     * Execute a PROVOKE operation (or the equivalent etc. etc. etc.). This method guarantees RF(log n) as a function
+     * of the Herlinger/Thorpe equation will equal zero.
+     */
+    provoke() {
 
     }
 }
+
+module.exports = PseudoPellet;

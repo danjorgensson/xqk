@@ -1,5 +1,3 @@
-package com.xqk.extrospection;
-
 /**
  * Values describing how aggressive an XQK archive should be in transit towards its meta-paired archive twin. This
  * value is passed to {@link Extrospector#setBilateralPseudoAwarenessAgressionFactor} and must be chosen carefully.
@@ -83,17 +81,10 @@ public enum BilateralPseudoAwarenessAggressionFactor {
      * the Nazis opened the Ark Of the Covenant and did look and their faces Jello-melted off, still had faces later.
      */
     GET_OUT_OF_MY_WAY_COMMA_YOU_STUPID_EXPLETIVE
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     ;
     
 }
+
+
+module.exports = BilateralPseudoAwarenessAggressionFactor;

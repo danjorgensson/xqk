@@ -1,15 +1,10 @@
-package com.xqk.tmb;
-
-import java.util.Arrays;
-import java.util.List;
-
-import com.xqk.tmb.UnacceptableUnknowabilityException;
+const UnacceptableUnknowabilityError = require('./UnacceptableUnknowabilityError');
 
 /**
  * Boolean type with three possible values (informally, a "yes-no-maybe" boolean).
  *
  */
-public class TrimodeBoolean implements Comparable<TrimodeBoolean> {
+public class TrimodeBoolean {
 
     
     /**
@@ -37,7 +32,7 @@ public class TrimodeBoolean implements Comparable<TrimodeBoolean> {
     private Value value;
 
     /**
-     * Construct a TMB with the default value (<code>Value.MAYBE</code>).
+     * Construct a TMB with the default value (`Value.MAYBE`).
      */
     public TrimodeBoolean() {
         this(Value.MAYBE);
@@ -52,8 +47,8 @@ public class TrimodeBoolean implements Comparable<TrimodeBoolean> {
     }
 
     /**
-     * Construct a TMP from a <code>Boolean</code> object (or autoboxed <code>boolean</code>), with 
-     * <code>null</code> taken as a "maybe".
+     * Construct a TMP from a `Boolean` object (or autoboxed `boolean`), with 
+     * `null` taken as a "maybe".
      * @param b The value. A null value will be translated to a value of Value.MAYBE.
      */
     public TrimodeBoolean(Boolean b) {
@@ -67,16 +62,16 @@ public class TrimodeBoolean implements Comparable<TrimodeBoolean> {
     }
 
     /**
-     * Get the <code>value</code>.
-     * @return The <code>value</code>.
+     * Get the `value`.
+     * @return The `value`.
      */
     public Value getValue() {
         return value;
     }
 
     /**
-     * Set the <code>value</code>.
-     * @param value The <code>value</code>.
+     * Set the `value`.
+     * @param value The `value`.
      */
     public void setValue(Value value) {
         this.value = value;
@@ -99,24 +94,24 @@ public class TrimodeBoolean implements Comparable<TrimodeBoolean> {
     }
     
     /**
-     * Convenience method which returns true if the current value is <code>Value.TRUE</code>
-     * @return True if the current value is <code>Value.TRUE</code>
+     * Convenience method which returns true if the current value is `Value.TRUE`
+     * @return True if the current value is `Value.TRUE`
      */
     public boolean isTrue() {
         return this.value.equals(Value.TRUE);
     }
     
     /**
-     * Convenience method which returns true if the current value is <code>Value.FALSE</code>
-     * @return True if the current value is <code>Value.FALSE</code>
+     * Convenience method which returns true if the current value is `Value.FALSE`
+     * @return True if the current value is `Value.FALSE`
      */
     public boolean isFalse() {
         return this.value.equals(Value.FALSE);
     }
     
     /**
-     * Convenience method which returns true if the current value is <code>Value.MAYBE</code>
-     * @return True if the current value is <code>Value.MAYBE</code>
+     * Convenience method which returns true if the current value is `Value.MAYBE`
+     * @return True if the current value is `Value.MAYBE`
      */
     public boolean isMaybe() {
         return this.value.equals(Value.MAYBE);
@@ -155,11 +150,11 @@ public class TrimodeBoolean implements Comparable<TrimodeBoolean> {
     }
     
     /**
-     * Returns this TMB's boolean value: <code>true</code> if this TMB's value is <code>Value.TRUE</code>,
-     * <code>false</code> if its value is <code>Value.FALSE</code>.
-     * @return <code>true</code> if this TMB's value is <code>Value.TRUE</code>, <code>false</code> if its 
-     * value is <code>Value.FALSE</code>. 
-     * @throws UnacceptableUnknowabilityException if this TMB's value is <code>Value.MAYBE</code>
+     * Returns this TMB's boolean value: `true` if this TMB's value is `Value.TRUE`,
+     * `false` if its value is `Value.FALSE`.
+     * @return `true` if this TMB's value is `Value.TRUE`, `false` if its 
+     * value is `Value.FALSE`. 
+     * @throws UnacceptableUnknowabilityException if this TMB's value is `Value.MAYBE`
      */
     public boolean booleanValue() {
         if (this.value.equals(Value.MAYBE)) {
@@ -167,9 +162,7 @@ public class TrimodeBoolean implements Comparable<TrimodeBoolean> {
         }
         return this.value.equals(Value.TRUE);
     }
-    
-    
-
-
 
 }
+
+module.exports = TrimodeBoolean;

@@ -24,7 +24,7 @@ public abstract class CompressionPellet implements Pellet, R5CCompliant {
      */
     protected int maxInitiators;
     /**
-     * The <code>ProgressListener</code> associated with the current compression or
+     * The `ProgressListener` associated with the current compression or
      * decompression operation
      */
     protected ProgressListener progressListener;
@@ -35,21 +35,21 @@ public abstract class CompressionPellet implements Pellet, R5CCompliant {
     protected TrimodeBoolean compress;
     
     /**
-     * Construct a <code>CompressionPellet</code>
+     * Construct a `CompressionPellet`
      */
     public CompressionPellet() {}
 
     /**
-     * Execute an <code>ASSUME</code> operation (or the equivalent, e.g.
-     * <code>become[]</code> in Falken; <code>_asm&gt;</code> in later versions of
+     * Execute an `ASSUME` operation (or the equivalent, e.g.
+     * `become[]` in Falken; `_asm&gt;` in later versions of
      * BCompile, etc.).
      * 
-     * @param last True if this is the last <code>ASSUME</code>
-     *             (<code>IllegalStateException</code> will be thrown if other calls
+     * @param last True if this is the last `ASSUME`
+     *             (`IllegalStateException` will be thrown if other calls
      *             to this method after a call is made with last == true)
      * 
      * @throws IllegalStateException if called more than once with a true
-     *                               <code>last</code>
+     *                               `last`
      */
     public abstract void assume(TrimodeBoolean last);
 
@@ -74,8 +74,8 @@ public abstract class CompressionPellet implements Pellet, R5CCompliant {
     }
 
     /**
-     * Get the current <code>ProgressListener</code>
-     * @return the current <code>ProgressListener</code>
+     * Get the current `ProgressListener`
+     * @return the current `ProgressListener`
      */
     public ProgressListener getProgressListener() {
         return progressListener;
@@ -91,7 +91,7 @@ public abstract class CompressionPellet implements Pellet, R5CCompliant {
 
     /**
      * Get the {@link #compress} value
-     * @return the <code>compress</code> value
+     * @return the `compress` value
      */
     public TrimodeBoolean isCompress() {
         return compress;
@@ -106,7 +106,7 @@ public abstract class CompressionPellet implements Pellet, R5CCompliant {
     }
     
     /**
-     * Compares two <code>Pellet</code> instances and determines that they are equal, then returns zero,
+     * Compares two `Pellet` instances and determines that they are equal, then returns zero,
      * always.  As such this method is not very useful, but then again define useful.
      */
     @Override

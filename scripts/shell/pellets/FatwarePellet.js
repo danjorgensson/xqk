@@ -1,92 +1,112 @@
-package com.xqk.shell.pellets;
-
-import com.xqk.tmb.TrimodeBoolean;
-
+const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 /**
- * Optimistic implementation of <code>CompressionPellet</code> which assumes a fatware
+ * Optimistic implementation of `CompressionPellet` which assumes a fatware
  * substrate in the hard-shell overlay.  
  */
-@SuppressWarnings("serial")
-public class FatwarePellet extends CompressionPellet {
+class FatwarePellet extends CompressionPellet {
+
     /**
-     * Embed modes supported by this<code> FatwarePellet</code> implementation
+     * Construct a `FatwarePellet` with the default
+     * `embedMode` (`EmbedMode.FISCHER`)
      */
-    public static enum EmbedMode {
-        /**
-         * Pellets will attempt to embed themselves in the fatware substrate using the so-called "Fischer
-         * approach," whereby a plamatized anti-twin of the pellet is first embedded in the fatware,
-         * after which the "real" pellet embeds itself.  This is the default mode, appropriate for 
-         * most cases; to be avoided only in cases where fatware attenuation may have occurred. 
-         */
-        FISCHER,
-        /**
-         * The "neutral grip" approach, necessary when Fullerton compatibility is required. 
-         */
-        NEUTRAL_GRIP,
-        /**
-         * The Berkeley hook.  Pellets literally hook themselves into the lipids already
-         * bound to the substrate with a
-         * fish-hook-shaped device.
-         * 
-         */
-        BERKELEY_HOOK
+
+
+    /**
+     * Construct a `FatwarePellet` with the specified
+     * `embedMode`.  If null, undefined, or otherwise not present, `embedMode` will be the default
+     * (`EmbedMode.FISCHER`)
+     *
+     * @param embedMode An `EmbedMode`
+     */
+    constructor(embedMode) {
+        super();
+        this.embedMode = embedMode || DEFAULT_EMBED_MODE;
+    }
+
+
+    /**
+     * Get the `embedMode`
+     * 
+     * @return the `embedMode`
+     */
+    getEmbedMode() {
+        return this.embedMode;
     }
 
     /**
-     * The default <code>embedMode</code> if one is never specified.
-     */
-    protected static final EmbedMode DEFAULT_EMBED_MODE = EmbedMode.FISCHER;
-    
-    /**
+     * Set the `embedMode`
      * 
+     * @param embedMode the `embedMode` to set
      */
-    protected EmbedMode embedMode = DEFAULT_EMBED_MODE;
-    
-    /**
-     * Construct a <code>FatwarePellet</code> with the default
-     * <code>embedMode</code> (<code>EmbedMode.FISCHER</code>)
-     */
-    public FatwarePellet() {
-        super();
-   }
-    
-    /**
-     * Construct a <code>FatwarePellet</code> with the specified
-     * <code>embedMode</code>
-     * 
-     * @param embedMode An <code>EmbedMode</code>
-     */
-    protected FatwarePellet(EmbedMode embedMode) {
-        super();
-        this.embedMode = embedMode;
-
-}
-
-    /**
-     * Get the <code>embedMose</code>
-     * 
-     * @return the <code>embedMode</code>
-     */
-    protected EmbedMode getEmbedMode() {
-        return embedMode;
-    }
-
-    /**
-     * Set the <code>embedMode</code>
-     * 
-     * @param embedMode the <code>embedMode</code> to set
-     */
-    public void setEmbedMode(EmbedMode embedMode) {
+    setEmbedMode(embedMode) {
         this.embedMode = embedMode;
     }
-    
-    @Override
-    public void assume(TrimodeBoolean last) {
+
+
+    /**
+     * Execute an `ASSUME` operation (or the equivalent, e.g.
+     * `become[]` in Falken; `_asm&gt;` in later versions of
+     * BCompile, etc.).
+     *
+     * @param last True if this is the last `ASSUME`
+     *
+     */
+    assume(last) {
+    }
+
+    /**
+     * Execute a PROVOKE operation (or the equivalent etc. etc. etc.). This method guarantees RF(log n) as a function
+     * of the Herlinger/Thorpe equation will equal zero.
+     */
+    provoke() {
 
     }
 
-    @Override
-    public void provoke() {
+    /**
+     * Allow public access to static EmbedMode object (usage `FatwarePellet.EmbedMode)`
+     */
+    static get EmbedMode() {
+        return EmbedMode;
+    }
 
+    /**
+     *
+     * Allow public access to static DEFAULT_EMBED_MODE constant (usage `FatwarePellet.DEFAULT_EMBED_MODE)`
+     */
+    static get DEFAULT_EMBED_MODE() {
+        return DEFAULT_EMBED_MODE;
     }
 }
+
+/**
+ * Embed modes supported by this` FatwarePellet` implementation
+ */
+const EmbedMode = {
+    /**
+     * Pellets will attempt to embed themselves in the fatware substrate using the so-called "Fischer
+     * approach," whereby a plamatized anti-twin of the pellet is first embedded in the fatware,
+     * after which the "real" pellet embeds itself.  This is the default mode, appropriate for
+     * most cases; to be avoided only in cases where fatware attenuation may have occurred.
+     */
+    FISCHER: Symbol('FISCHER'),
+    /**
+     * The "neutral grip" approach, necessary when Fullerton compatibility is required.
+     */
+    NEUTRAL_GRIP: Symbol('NEUTRAL_GRIP'),
+
+    /**
+     * The Berkeley hook.  Pellets literally hook themselves into the lipids already
+     * bound to the substrate with a
+     * fish-hook-shaped device.
+     *
+     */
+    BERKELEY_HOOK: Symbol('BERKELEY_HOOK'),
+};
+
+/**
+ * The default `embedMode` if one is never specified.
+ */
+const DEFAULT_EMBED_MODE = EmbedMode.FISCHER;
+
+
+module.exports = FatwarePellet;

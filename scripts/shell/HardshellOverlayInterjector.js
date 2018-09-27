@@ -1,11 +1,9 @@
-package com.xqk.shell;
-
-import com.xqk.CompressorDecompressor;
-import com.xqk.ProgressListener;
-import com.xqk.extrospection.Extrospector;
-import com.xqk.shell.pellets.CompressionPellet;
-import com.xqk.shell.pellets.PelletFactory;
-import com.xqk.tmb.TrimodeBoolean;
+const ArchiveExtrospector = require('../CompressorDecompressor');
+const ProgressListener = require('../ProgressListener');
+const Extrospector = require('../extrospection/Extrospector');
+const CompressionPellet = require('../shell/pellets/CompressionPellet');
+const PelletFactory = require('../shell/pellets/PelletFactory');
+const TrimodeBoolean = require('../tmb/TrimodeBoolean');
 
 /**
  * Generates the hard-shell contingency overlay which enfolds all XQK archives.  The overlay consists of
@@ -13,24 +11,11 @@ import com.xqk.tmb.TrimodeBoolean;
  * and the onboard XQK algorithm itself.
  *
  */
-public class HardshellOverlayInterjector {
-    
-    /**
-     * How many PPR initiators will be used at one time (effectively this is the size of the initiator pool)
-     */
-    public static final int MAX_INITIATORS = 10;
-    /**
-     * How often, in milliseconds, the overlay should re-Sandersonize itself when its Koroviev velocity is
-     * not near-zero with respect to the local frame.
-     */
-    public static final int SANDERSONIZE_INTERVAL = 4;
-    
-    private static final byte[] INITIAL_OVERLAY_CHARS = "LOCKB>>:OvMtx(:Proc/00000000|(\"".getBytes();
-    private static final byte[] SEALANT = "\")).call(\"dec\").rprot(UNLOCKB)>>".getBytes();
-    
+class HardshellOverlayInterjector {
+
     /**
      * Build and return the hard-shell overlay.  This method is called by a {@link CompressorDecompressor} instance 
-     * exactly once when hardening an archive in preparation for transport.
+     * exactly once when hardening an archive in preparation for PATHX-level transport.
      * 
      * @param pelletCount Number of compression pellets ({@link CompressionPellet}) to position athwart the hard-shell's
      *   {@link InvulnerabilityMatrix} (typically 2048)
@@ -43,24 +28,38 @@ public class HardshellOverlayInterjector {
      * @return The hard-shell contingency overlay to be used to enfold the archive
      */
 
-    public static byte[] generateEnfolder(int pelletCount, byte[] algo, InvulnerabilityMatrix matrix, ProgressListener progressListener, Extrospector extrospector, Class<CompressionPellet> pelletFactoryOverrideClass, TrimodeBoolean compress) {
+    static generateEnfolder(pelletCount, algo, matrix, progressListener, extrospector,
+                                          pelletFactoryOverrideClass, compress) {
         if (compress.booleanValue()) {
             progressListener.outPrintln("Pelletizing overlay (ct=" + pelletCount + ")...");
         }
-        matrix.reflectPellets(PelletFactory.getPellets(pelletCount, SANDERSONIZE_INTERVAL, false, MAX_INITIATORS, progressListener, pelletFactoryOverrideClass, compress.booleanValue()));
+        matrix.reflectPellets(PelletFactory.getPellets(pelletCount, SANDERSONIZE_INTERVAL, false, MAX_INITIATORS,
+            progressListener, pelletFactoryOverrideClass, compress.booleanValue()));
         if (compress.booleanValue()) {
-            progressListener.outPrintln("");
+            progressListener.outPrintln('');
         }
               
-        StringBuilder b = new StringBuilder();
-        b.append(new String(INITIAL_OVERLAY_CHARS));
-        b.append(new String(algo));
-        b.append(new String(matrix.getGridBytes()));
-        b.append(new String(matrix.getPelletBytes()));
-        b.append(new String(SEALANT));
-
-        return b.toString().getBytes();
+        const b = `${INITIAL_OVERLAY_CHARS}${algo}${matrix.getGridBytes()}${matrix.getPelletBytes()}${SEALANT}`;
+        return b.getBytes();
     }
 
 
 }
+
+
+/**
+ * How many PPR initiators will be used at one time (effectively this is the size of the initiator pool)
+ */
+const MAX_INITIATORS = 10;
+/**
+ * How often, in milliseconds, the overlay should re-Sandersonize itself when its Koroviev velocity is
+ * not near-zero with respect to the local frame.
+ */
+const SANDERSONIZE_INTERVAL = 4;
+
+const INITIAL_OVERLAY_CHARS = 'LOCKB>>:OvMtx(:Proc/00000000|(\"'.getBytes();
+const SEALANT = "\")).call(\"dec\").rprot(UNLOCKB)>>".getBytes();
+
+
+
+module.exports = HardshellOverlayInterjector;

@@ -2,14 +2,14 @@ package com.xqk.shell.pellets;
 
 
 /**
- * <code>PseudoPellet</code> subclass which fully implements <code>CompressionPellet</code>.
+ * `PseudoPellet` subclass which fully implements `CompressionPellet`.
  * Provides full OCRC-relay functionality as well as full bit-level Sandersonization at the
  * bucket levelpacket level.
  */
 @SuppressWarnings("serial")
 public class SandersonPseudoPellet extends PseudoPellet {
     /**
-     * Construct a <code>SandersonPseudoPellet</code>
+     * Construct a `SandersonPseudoPellet`
      */
     protected SandersonPseudoPellet() {
         super();
@@ -21,8 +21,8 @@ public class SandersonPseudoPellet extends PseudoPellet {
     }
     
     /**
-     * Run the underlying <code>RELAY</code> as a transport-layer service no later
-     * than <code>maxMillis</code> from now
+     * Run the underlying `RELAY` as a transport-layer service no later
+     * than `maxMillis` from now
      * 
      * @param maxMillis Max number of milliseconds delay before running the service.
      */
