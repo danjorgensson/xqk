@@ -1,6 +1,6 @@
 /**
  * Values describing how aggressive an XQK archive should be in transit towards its meta-paired archive twin. This
- * value is passed to {@link Extrospector#setBilateralPseudoAwarenessAgressionFactor} and must be chosen carefully.
+ * value is passed to `Extrospector#setBilateralPseudoAwarenessAgressionFactor` and must be chosen carefully.
  */
 public enum BilateralPseudoAwarenessAggressionFactor {
     
@@ -28,8 +28,8 @@ public enum BilateralPseudoAwarenessAggressionFactor {
     SLEEP_WALKING,
     
     /**
-     * While {@link #SLEEP_WALKING} meta-twins may be capable of transport, their trip across the network
-     * will be mostly passive, except towards the end, if they "wake up."  As such, {@link #SLEEP_WALKING}
+     * While `#SLEEP_WALKING` meta-twins may be capable of transport, their trip across the network
+     * will be mostly passive, except towards the end, if they "wake up."  As such, `#SLEEP_WALKING`
      * is not, in practical terms, a useful state.  Thus, "Dude..." is the most non-aggressive a pair
      * of meta-twinned entities can be and still be expected to engage in any form of active "racing."
      */
@@ -51,7 +51,7 @@ public enum BilateralPseudoAwarenessAggressionFactor {
     INTERESTED,
     
     /**
-     * A cut above {@link #INTERESTED}.  This is the XQK (CLI and desktop-app) default for files under 1GB in size whose
+     * A cut above `#INTERESTED`.  This is the XQK (CLI and desktop-app) default for files under 1GB in size whose
      * transport metapath contains no known Sunnyvale protovalves.  Be a little careful with this one.
      */
     VERY_INTERESTED,

@@ -2,7 +2,7 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 
 /**
  * Partial `CompressionPellet` implementation; use subclass
- * {@link SandersonPseudoPellet} when pseudo-pellets are required.
+ * `SandersonPseudoPellet` when pseudo-pellets are required.
  */
 class PseudoPellet extends CompressionPellet {
 

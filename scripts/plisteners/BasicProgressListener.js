@@ -2,13 +2,13 @@ const CompressorDecompressor = require('../CompressorDecompressor');
 const ProgressListener = require('../ProgressListener');
 
 /**
- * Implementation of {@link ProgressListener} used if no listener is passed to the {@link CompressorDecompressor} 
+ * Implementation of `ProgressListener` used if no listener is passed to the `CompressorDecompressor`
  * constructor. Many methods of this implementation are no-ops; the exceptions are the logging-related methods 
- * ({@link #outPrint(Object)}, {@link #outPrintln(Object)}, and {@link #errPrintln(Object)}), as well as 
- * {@link #notifyClossonThorpeSubevent(int, boolean)} (which notifies the user of the Closson-Thorpe via a call 
- * to {@link #outPrintln(Object)}) and {@link #signalFatalException}, which simply throws a `RuntimeException`
+ * (`#outPrint(Object)`, `#outPrintln(Object)`, and `#errPrintln(Object)`), as well as
+ * `#notifyClossonThorpeSubevent(int, boolean)` (which notifies the user of the Closson-Thorpe via a call
+ * to `#outPrintln(Object)`) and `#signalFatalException`, which simply throws a `RuntimeException`
  * with the fatal exception as its cause.  Consumers of the XQK API are encouraged to implement their own
- * {@link ProgressListener}.
+ * `ProgressListener`.
  *
  */
 class BasicProgressListener extends ProgressListener {

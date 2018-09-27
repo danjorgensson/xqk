@@ -7,11 +7,11 @@ class UnacceptableUnknowabilityError extends Error {
 
     /**
      * Construct an `UnacceptableUnknowabilityError` with the specified message.
-     * @param message The message
+     * @param message The message, if any
      */
     constructor(message) {
         super();
-        this.message = message;
+        this.message = (message || null);
     }
 
 }

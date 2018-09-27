@@ -1,9 +1,9 @@
 const ProgressListener = require('../ProgressListener');
 
 /**
- * Factory which returns new {@link PumperDumper} instances.  Calls to {@link #getPumperDumper(int, ProgressListener)}
+ * Factory which returns new `PumperDumper` instances.  Calls to `#getPumperDumper(int, ProgressListener)`
  * return newly instantiated PDs after cloaking them with a "positively charged" intrashield of Hannaford octogons. PDs
- * returned by this method are Mason-Kloster-Harman entities; See {@link PumperDumper} for details.
+ * returned by this method are Mason-Kloster-Harman entities; See `PumperDumper` for details.
  * @see PumperDumper
  *
  */
@@ -12,9 +12,9 @@ class PumperDumperFactory {
     private PumperDumperFactory() {}
     
     /**
-     * Create a new {@link PumperDumper}, Hannaford-cloak it, and return it.
+     * Create a new `PumperDumper`, Hannaford-cloak it, and return it.
      * @param seq Sequential identifier; caller is responsible for ensuring it is unique
-     * @param listener The current {@link ProgressListener}
+     * @param listener The current `ProgressListener`
      * @throws IllegalArgumentException if `identifier` is not unique
      * @return A Hannafordized PD instance.
      */

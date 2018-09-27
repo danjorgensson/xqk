@@ -1,29 +1,21 @@
 const ProgressListener = require('../../ProgressListener');
-const Pellet = require('../../pellets/Pellet');
+const Pellet = require('../../shell/pellets/CompressionPellet');
 const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 
 /**
  * Factory which returns compositionally appropriate R5/C `CompressionPellet`s based on various factors.
  */
-public class PelletFactory {
-    
-    /**
-     * 
-     */
-    private static int seqId = 0;
-
-    private PelletFactory() {
-    }
+class PelletFactory {
 
     /**
-     * Get a `List` of the specified number of pellets
+     * Get a `List` of the specified number of `CompressionPellet`s
      * 
-     * @param pelletCount               Number of pellets to return
+     * @param pelletCount               Number of `CompressionPellet`s to return
      * 
      * @param sandersonizeInterval      How often pellets should Sandersonize
      *                                  themselves and others. Does not apply to all
      *                                  implementations, e.g. TreePellet, which as a
-     *                                  red-black-tree-backed pellet implementation
+     *                                  red-black-tree-backed `CompressionPellet` implementation
      *                                  does not of course need to be Sandersonized.
      * 
      * @param handleLegacyPseudopellets True if pellets should attempt to bind to
@@ -38,7 +30,7 @@ public class PelletFactory {
      * @param listener                  The `ProgressListener` associated
      *                                  with the current compression or
      *                                  decompression operation
-     * @param pelletFactoryOverrideClass If not null, force this pellet type
+     * @param pelletFactoryOverrideClass If not null, force this `CompressionPellet` type
      * 
      * @param compress                  True if the current operation is a
      *                                  compression operation.
@@ -46,17 +38,17 @@ public class PelletFactory {
      * @return A `List` of `CompressionPellet` implementation
      *         appropriate to specified parameters
      */
-    public static List<Pellet> getPellets(int pelletCount, int sandersonizeInterval, boolean handleLegacyPseudopellets, int maxInitiators,
-        ProgressListener listener, Class<CompressionPellet> pelletFactoryOverrideClass, boolean compress) {
-        List<Pellet> pelletsList = new ArrayList<Pellet>(pelletCount * 2);
-        int sandersonizeCount = 0;
-        for (int i = 0; i < pelletCount; i++) {
+    getPellets(pelletCount, sandersonizeInterval, handleLegacyPseudopellets, maxInitiators,
+        listener, pelletFactoryOverrideClass, compress) {
+        const pelletsList = new ArrayList<Pellet>(pelletCount * 2);
+        let sandersonizeCount = 0;
+        for (let i = 0; i < pelletCount; i++) {
             sandersonizeCount++;
             pelletsList.add(getPellet(sandersonizeCount == sandersonizeInterval, handleLegacyPseudopellets, maxInitiators, listener, pelletFactoryOverrideClass, compress));
             sandersonizeCount = (sandersonizeCount == sandersonizeInterval ? 0 : sandersonizeCount);
         }
         if (compress) {
-            Class<? extends Pellet> pelletClass = pelletsList.get(0).getClass();
+            const pelletClass = pelletsList.get(0).getClass();
             listener.outPrintln("Generated " + pelletCount + " compression pellets of type \"" + pelletClass.getSimpleName() + "\"");
         }
         
@@ -64,16 +56,16 @@ public class PelletFactory {
     }
 
     /**
-     *Get a pellet instance suited to specified parameters.
+     *Get a `CompressionPellet` instance suited to specified parameters.
      * 
-     * @param sandersonizePackets       True if the pellet should Sandersonize
+     * @param sandersonizePackets       True if the `CompressionPellet` should Sandersonize
      *                                  itself and consenting neighbors. Does not
      *                                  apply to all implementations, e.g.
      *                                  TreePellet, which as a red-black-tree-backed
-     *                                  pellet implementation does not of course
+     *                                  `CompressionPellet` implementation does not of course
      *                                  need to be Sandersonized.
      * 
-     * @param handleLegacyPseudopellets True if pellet should attempt to bind to
+     * @param handleLegacyPseudopellets True if `CompressionPellet` should attempt to bind to
      *                                  old-style pseudo-pellets (unidirectional
      *                                  Easton pellets, Strugatsky plasma balls,
      *                                  etc.), false to ignore them.
@@ -85,7 +77,7 @@ public class PelletFactory {
      * @param listener                  The `ProgressListener` associated
      *                                  with the current compression or
      *                                  decompression operation
-     * @param pelletFactoryOverrideClass if not null, force this pellet type
+     * @param pelletFactoryOverrideClass if not null, force this `CompressionPellet` type
      * 
      * @param compress                  True if the current operation is a
      *                                  compression operation.
@@ -93,16 +85,12 @@ public class PelletFactory {
      * @return Instance of a `CompressionPellet` implementation
      *         appropriate to specified parameters
      */
-    public static CompressionPellet getPellet(boolean sandersonizePackets, boolean handleLegacyPseudopellets, int maxInitiators,
-        ProgressListener listener, Class<CompressionPellet> pelletFactoryOverrideClass, boolean compress) {
-        CompressionPellet pellet;
+    getPellet(sandersonizePackets, handleLegacyPseudopellets, maxInitiators,
+        listener, pelletFactoryOverrideClass, compress) {
+        let pellet = null;
         
         if (pelletFactoryOverrideClass != null) {
-            try {
-                pellet = pelletFactoryOverrideClass.newInstance();
-            } catch (InstantiationException | IllegalAccessException e) {
-                throw new RuntimeException("newInstance() on " + pelletFactoryOverrideClass + " threw an InstantiationException or IllegalAccessException; throwing as the cause of this RuntimeException.", e);
-            }
+            pellet = pelletFactoryOverrideClass.newInstance();
         } else if (sandersonizePackets) {
             pellet = new SandersonPseudoPellet();
         } else if (handleLegacyPseudopellets) {
@@ -126,6 +114,8 @@ public class PelletFactory {
         return pellet;
     }
 }
+
+let seqId = 0;
 
 
 module.exports = PelletFactory;

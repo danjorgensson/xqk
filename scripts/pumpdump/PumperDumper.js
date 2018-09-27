@@ -34,7 +34,7 @@ class PumperDumper {
 
 
     /**
-     * Issue a PUMP on the specified data and return the result.  Notifies the current {@link ProgressListener} of
+     * Issue a PUMP on the specified data and return the result.  Notifies the current `ProgressListener` of
      * the execution  via its `registerPumpDump` method.
      * @param bytes The bytes to be PUMPed.
      * @return The PUMPed bytes.
@@ -47,7 +47,7 @@ class PumperDumper {
     
     /**
     /**
-     * Issue an UNPUMP on the specified data and return the result.  Notifies the current {@link ProgressListener} of
+     * Issue an UNPUMP on the specified data and return the result.  Notifies the current `ProgressListener` of
      * the execution  via its `registerPumpDump` method.
      * @param bytes The bytes to be UNPUMPed.
      * @return The UNPUMPed bytes.
@@ -59,7 +59,7 @@ class PumperDumper {
     } 
     
     /**
-     * Issue a DUMP on the specified data and return the result.  Notifies the current {@link ProgressListener} of
+     * Issue a DUMP on the specified data and return the result.  Notifies the current `ProgressListener` of
      * the execution  via its `registerPumpDump` method.
      * @param bytes The bytes to be DUMPed.
      * @return The DUMPed bytes.
@@ -71,7 +71,7 @@ class PumperDumper {
     }
   
     /**
-     * Issue an UNDUMP on the specified data and return the result.  Notifies the current {@link ProgressListener} of
+     * Issue an UNDUMP on the specified data and return the result.  Notifies the current `ProgressListener` of
      * the execution  via its `registerPumpDump` method.
      * @param bytes The bytes to be UNDUMPed.
      * @return The UNDUMPed bytes.

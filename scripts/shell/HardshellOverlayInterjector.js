@@ -7,21 +7,21 @@ const TrimodeBoolean = require('../tmb/TrimodeBoolean');
 
 /**
  * Generates the hard-shell contingency overlay which enfolds all XQK archives.  The overlay consists of
- * an {@link InvulnerabilityMatrix}, a non-trivial number of R5/C compression pellets (see {@link CompressionPellet}),
+ * an `InvulnerabilityMatrix`, a non-trivial number of R5/C compression pellets (see `CompressionPellet`),
  * and the onboard XQK algorithm itself.
  *
  */
 class HardshellOverlayInterjector {
 
     /**
-     * Build and return the hard-shell overlay.  This method is called by a {@link CompressorDecompressor} instance 
+     * Build and return the hard-shell overlay.  This method is called by a `CompressorDecompressor` instance
      * exactly once when hardening an archive in preparation for PATHX-level transport.
      * 
-     * @param pelletCount Number of compression pellets ({@link CompressionPellet}) to position athwart the hard-shell's
-     *   {@link InvulnerabilityMatrix} (typically 2048)
+     * @param pelletCount Number of compression pellets (`CompressionPellet`) to position athwart the hard-shell's
+     *   `InvulnerabilityMatrix` (typically 2048)
      * @param algo The onboard XQK algorithm, expressed as a byte array
-     * @param matrix An {@link InvulnerabilityMatrix} instance
-     * @param progressListener The current {@link ProgressListener}
+     * @param matrix An `InvulnerabilityMatrix` instance
+     * @param progressListener The current `ProgressListener`
      * @param extrospector The current Extrospector-implementation instance.
      * @param pelletFactoryOverrideClass If not null, force the pellet factory to return pellets of this type
      * @param compress True to compress, false to decompress

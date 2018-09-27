@@ -27,7 +27,7 @@ class CompressorDecompressor {
      *
      * Constructs a `CompressorDecompressor` with the specified options
      * and listener, and a pellet class to be returned always by
-     * {@link PelletFactory} getters.
+     * `PelletFactory` getters.
      *
      * @param compressionOptions         If not null, a `Map` specifying
      *                                   which facilities of XQK should be enabled;
@@ -39,14 +39,14 @@ class CompressorDecompressor {
      *                                   inline PUMP and UNPUMP directives), and
      *                                   `spjEnabled` (true to enable
      *                                   subjective packet-jettisoning (SPJ)). If
-     *                                   null, {@link #defaultCompressionOptions}
+     *                                   null, `#defaultCompressionOptions`
      *                                   are used (which enables all three of these,
      *                                   which is standard usage).
-     * @param progressListener           If not null, a {@link ProgressListener}
+     * @param progressListener           If not null, a `ProgressListener`
      *                                   implementation instance. If null, a
-     *                                   {@link BasicProgressListener} is used.
+     *                                   `BasicProgressListener` is used.
      * @param pelletFactoryOverrideClass `Class` of the concrete
-     *                                   {@link CompressionPellet} subclass, instances
+     *                                   `CompressionPellet` subclass, instances
      *                                   of which will always be returned by
      *                                   `PelletFactory`. This value may
      *                                   be null; if so, the factory will return the
@@ -60,16 +60,16 @@ class CompressorDecompressor {
          * `inliningEnabled` (true to inline all PUMP/UNPUMP directives),
          * `spjEnabled` (true to enable subjective packet-jettisoning (SPJ)),
          * and `bpaEnabled` (true to enable bilateral pseudo-awareness). If
-         * null or not specified, {@link #defaultCompressionOptions} are used.
+         * null or not specified, `#defaultCompressionOptions` are used.
          *
          * @see #defaultCompressionOptions
          */
         this.compressionOptions = compressionOptions;
 
         /**
-         * Instance of a {@link ProgressListener} implementation. If null or
-         * unspecified, {@link #defaultProgressListener} is used (an instance of
-         * {@link BasicProgressListener}).
+         * Instance of a `ProgressListener` implementation. If null or
+         * unspecified, `#defaultProgressListener` is used (an instance of
+         * `BasicProgressListener`).
          *
          * @see ProgressListener
          * @see BasicProgressListener
@@ -79,18 +79,18 @@ class CompressorDecompressor {
 
 
         /**
-         * If set, the `Class`, a concrete {@link CompressionPellet} subclass,
-         * of all pellet instences to be returned by calls to {@link PelletFactory}
+         * If set, the `Class`, a concrete `CompressionPellet` subclass,
+         * of all pellet instences to be returned by calls to `PelletFactory`
          * getter methods. If null or not specified, the factory will return instances
          * of optimal `CompressionPellet` subclasses based on current
          * conditions. While most users will want to rely on the factory to provide
          * appropriate pellets, XQK provides several `CompressionPellet`
-         * subclasses which may suit user needs as well: {@link FatwarePellet} (often
+         * subclasses which may suit user needs as well: `FatwarePellet` (often
          * used when strict Fullerton compatibility is required),
-         * {@link OraclePelletAdapter}, {@link SandersonPseudoPellet} (the 'traditional'
-         * R5/C pellet implementation), {@link TreePellet} (a lightweight alternative to
+         * `OraclePelletAdapter`, `SandersonPseudoPellet` (the 'traditional'
+         * R5/C pellet implementation), `TreePellet` (a lightweight alternative to
          * the Sanderson implementation often used for mobile implementations), and
-         * {@link PseudoPellet} (an isotope-free tree-pellet with its own CCR).
+         * `PseudoPellet` (an isotope-free tree-pellet with its own CCR).
          *
          * @see CompressionPellet
          * @see FatwarePellet
@@ -102,9 +102,9 @@ class CompressorDecompressor {
         this.pelletFactoryOverrideClass = pelletFactoryOverrideClass;
 
         /**
-         * Instance of a {@link TypeProvider} implementation to be used in prestructing
+         * Instance of a `TypeProvider` implementation to be used in prestructing
          * the invulnerability matrix which enfolds the actual payload of any XQK
-         * archive. If not specified, this is a {@link LivermoreTypeProvider}, which
+         * archive. If not specified, this is a `LivermoreTypeProvider`, which
          * will meet most needs. (RS-443 compliance issues are generally the reason
          * other providers are used.)
          *
@@ -113,9 +113,9 @@ class CompressorDecompressor {
         this.provider = new LivermoreTypeProvider();
 
         /**
-         * Instance of an {@link Extrospector} implementation which will reside in the
+         * Instance of an `Extrospector` implementation which will reside in the
          * archive's hard-shell contingency shield. (For version 5.x, this value is an
-         * {@link ArchiveExtrospector} instance with a 5ms look/lookback, and cannot be
+         * `ArchiveExtrospector` instance with a 5ms look/lookback, and cannot be
          * changed via this API.)
          */
         this.extrospector = new ArchiveExtrospector(DEFAULT_EXTROSPECTOR_LOOK_MILLIS_INTERVAL);
@@ -216,7 +216,7 @@ class CompressorDecompressor {
                     if (flags.length() !== 8) {
                         throw new RuntimeException('invalid flags.');
                     }
-                } catch (e) {
+           } catch (e) {
                     flags = '--------';
                     flagsReadError = true;
                 } finally {
@@ -486,7 +486,7 @@ const IDX_SPJ = 1;
 const IDX_BS = 2;
 
 /**
- * How often, in milliseconds, an {@link Extrospector} will 'look' to determine
+ * How often, in milliseconds, an `Extrospector` will 'look' to determine
  * its own state relative to nearby entities such as twinned archives with the
  * same TCP metapaths. This applies to at-rest state as well as when an
  * archive's Koroviev velocity is not near-zero with respect to the local frame.
@@ -494,7 +494,7 @@ const IDX_BS = 2;
 const DEFAULT_EXTROSPECTOR_LOOK_MILLIS_INTERVAL = 5;
 
 /**
- * The number of {@link CompressionPellet}s used by default when constructing an
+ * The number of `CompressionPellet`s used by default when constructing an
  * archive's hard-shell contingency overlay. The minimum is 512.
  */
 const DEFAULT_PELLET_CT = 2048;
@@ -507,7 +507,7 @@ const DEFAULT_PELLET_CT = 2048;
 const TICK_LENGTH_BYTES = 2000000;
 
 /**
- * Default {@link #compressionOptions}, used when these options are not set in
+ * Default `#compressionOptions`, used when these options are not set in
  * the constructor call. These default options enable bilateral
  * pseudo-awareness, inlined PUMP and UNPUMP directives, and subjective
  * packet-jettisoning (SPJ).
@@ -522,8 +522,8 @@ const defaultCompressionOptions = new Map()
 
 
 /**
- * The {@link ProgressListener} used if one is not supplied in a constructor
- * call. The default is a {@link BasicProgressListener} instance, which logs
+ * The `ProgressListener` used if one is not supplied in a constructor
+ * call. The default is a `BasicProgressListener` instance, which logs
  * essential information to `System.out`.
  *
  * @see ProgressListener

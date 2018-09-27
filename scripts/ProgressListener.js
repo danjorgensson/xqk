@@ -4,10 +4,10 @@ const PelletFactory = require('./shell/pellets/PelletFactory');
 const TrimodeBoolean = require('./tmb/TrimodeBoolean');
 
 /**
- * A `ProgressListener` is passed to the {@link CompressorDecompressor} constructor (or,
- * if not passed, a default {@link BasicProgressListener} is used); after {@link CompressorDecompressor#execute(TrimodeBoolean, File, File)}
+ * A `ProgressListener` is passed to the `CompressorDecompressor` constructor (or,
+ * if not passed, a default `BasicProgressListener` is used); after `CompressorDecompressor#execute(TrimodeBoolean, File, File)`
  * is called (which may take a nontrivial amount of time to return), methods of the `ProgressListener` are
- * called noting events such as a byte being written to the target output stream, an {@link CompressionPellet} instantiation, 
+ * called noting events such as a byte being written to the target output stream, an `CompressionPellet` instantiation,
  * the occurrence of a fatal exception, etc.
  *
  */
@@ -75,7 +75,7 @@ class ProgressListener {
 
     /**
      * Called every time 2,000,000 bytes have been written to the output buffer.
-     * @deprecated Clients should keep track of "ticks" based on calls to {@link #notifyBytesWritten(long)}
+     * @deprecated Clients should keep track of "ticks" based on calls to `#notifyBytesWritten(long)`
      */
     progressTick(){
         throw new Error('I need to be implemented by a subclass.');
@@ -91,7 +91,7 @@ class ProgressListener {
     }
     
     /**
-     * Called when an {@link CompressionPellet} subclass instance is created by the {@link PelletFactory}.
+     * Called when an `CompressionPellet` subclass instance is created by the `PelletFactory`.
      * @param seqId A sequential identifier for the pellet; zero-based.
      */
     registerPellet(seqId){
@@ -103,7 +103,7 @@ class ProgressListener {
      * was in transit.  Because XQK
      * inlines PUMP and UNPUMP directives (and directives which result in pumper-dumper operations, such
      * as RETCH and XVOM) by default, the occurrence of a CTSE is not fatal.  However,
-     * if the current {@link CompressorDecompressor}'s `compressionOptions` specify a false value
+     * if the current `CompressorDecompressor`'s `compressionOptions` specify a false value
      * for `inliningEnabled`, the archive may have been corrupted, especially if the archive's
      * transport metapath was incorrectly Berkeleyized, or its Berkeley calibrands were affected by the 
      * Closson-Thorpe.
@@ -119,7 +119,7 @@ class ProgressListener {
      * of a pumperdumper.  Note that a call to this method does not mean the relevant PD attempted to
      * execute the directive (or if it did attempt execution, whether it succeeded).  In the event that
      * a PD attempts a PUMP or DUMP (or RETCH, XVOM, etc.) and the attempt fails, an exception would be
-     * thrown, caught, and passed to {@link #signalFatalException(Exception)}.
+     * thrown, caught, and passed to `#signalFatalException(Exception)`.
      * @param doPump True if a PUMP or PUMP-related directive was queued, false if an UNPUMP or UNPUMP-related
      * directive was queued.
      * @param pdCount The number of PUMP-like directives queued during this compress or decompress operation minus

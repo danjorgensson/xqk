@@ -90,7 +90,7 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
     }
 
     /**
-     * Set the current {@link #progressListener}
+     * Set the current `#progressListener`
      * @param progressListener The current ProgressListener
      */
     setProgressListener(progressListener) {
@@ -98,7 +98,7 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
     }
 
     /**
-     * Get the {@link #compress} value
+     * Get the `#compress` value
      * @return the `compress` value
      */
     isCompress() {
@@ -106,7 +106,7 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
     }
 
     /**
-     * Set the {@link #compress} value
+     * Set the `#compress` value
      * @param compress The compress value
      */
     setCompress(compress) {

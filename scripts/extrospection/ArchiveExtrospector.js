@@ -25,12 +25,12 @@ class ArchiveExtrospector {
      */
     constructor (lookMillisInterval = -1) {
         /**
-         * The current {@link CompressorDecompressor}'s `ProgressListener` instance
+         * The current `CompressorDecompressor`'s `ProgressListener` instance
          */
         this.progressListener = null;
 
         /**
-         * The current {@link CompressorDecompressor}'s `compressionOptions`
+         * The current `CompressorDecompressor`'s `compressionOptions`
          */
         this.compressionOptions = null;
     }
@@ -45,7 +45,7 @@ class ArchiveExtrospector {
 
     /**
      * The compression options which will be used for this compression or decompression operation
-     * (see {@link CompressorDecompressor}'s `compressionOptions` for details).
+     * (see `CompressorDecompressor`'s `compressionOptions` for details).
      * @param compressionOptions Compression options.  See {$link CompressorDecompressor#compressionOptions}.
      *   Passing null will result in use of the {$link CompressorDecompressor.defaultCompressionOptions}.
      */
@@ -55,7 +55,7 @@ class ArchiveExtrospector {
 
 
     /**
-     * The {@link ProgressListener} used by the {@link CompressorDecompressor} instance with which this
+     * The `ProgressListener` used by the `CompressorDecompressor` instance with which this
      * `Extrospector` is associated.
      * @param progressListener The `ProgressListener` associated with the current compression or
      * decompression operation.
@@ -66,7 +66,7 @@ class ArchiveExtrospector {
 
     /**
      * The compression options which will be used for this compression or decompression operation
-     * (see {@link CompressorDecompressor}'s `compressionOptions` for details).
+     * (see `CompressorDecompressor`'s `compressionOptions` for details).
      * @return The compression-options `Map`
      */
     getCompressionOptions() {
@@ -113,23 +113,23 @@ class ArchiveExtrospector {
     /**
      * Specifies how aggressive two meta-paired archive twins should be as they traverse a TCP network attempting to
      * "win" a packet-race.  BPS is one of the most powerful features of XQK, but how powerful depends very much on
-     * this value.  Not aggressive enough (say, {@link BilateralPseudoAwarenessAggressionFactor#COMATOSE} or certainly
-     * {@link BilateralPseudoAwarenessAggressionFactor#VEGETATIVE_STATE}) and while both meta-twinned entities will make it
+     * this value.  Not aggressive enough (say, `BilateralPseudoAwarenessAggressionFactor#COMATOSE` or certainly
+     * `BilateralPseudoAwarenessAggressionFactor#VEGETATIVE_STATE`) and while both meta-twinned entities will make it
      * to their destination (they are traveling over a TCP network, after all), they will generally make no effort to get there on
      * their own<sup>*</sup>.  On the other hand, an ag-factor such as
-     * {@link BilateralPseudoAwarenessAggressionFactor#I_AM_GONNA_ACE_THIS_SHIT} may get you sued by the
+     * `BilateralPseudoAwarenessAggressionFactor#I_AM_GONNA_ACE_THIS_SHIT` may get you sued by the
      * recipient's ISP and/or destroy some valuable hardware.<br><br>
      *
-     * Both the XQK desktop application and CLI usually opt for {@link BilateralPseudoAwarenessAggressionFactor#VERY_INTERESTED}
-     * in the case of file sizes less than 1GB and (usually) {@link BilateralPseudoAwarenessAggressionFactor#REALLY_REALLY_PUMPED}
+     * Both the XQK desktop application and CLI usually opt for `BilateralPseudoAwarenessAggressionFactor#VERY_INTERESTED`
+     * in the case of file sizes less than 1GB and (usually) `BilateralPseudoAwarenessAggressionFactor#REALLY_REALLY_PUMPED`
      * for files larger than that.<br><br>
      *
-     * <sup>*</sup> Twinned sleepwalkers ({@link BilateralPseudoAwarenessAggressionFactor#SLEEP_WALKING}) are the exception,
+     * <sup>*</sup> Twinned sleepwalkers (`BilateralPseudoAwarenessAggressionFactor#SLEEP_WALKING`) are the exception,
      * depending on which direction they walk (and if they're actually walking at all; sometimes sleepwalkers just stand there, perhaps
      * in front of an open refrigerator, or they could be sitting in their car, in the driveway. You don't know what
      * they're going to do.  But waking them up is bad).
      *
-     * @param aggressionFactor A BPA {@link BilateralPseudoAwarenessAggressionFactor} aggression level
+     * @param aggressionFactor A BPA `BilateralPseudoAwarenessAggressionFactor` aggression level
      * @see BilateralPseudoAwarenessAggressionFactor
      */
     setBilateralPseudoAwarenessAgressionFactor(aggressionFactor) {
@@ -147,13 +147,14 @@ class ArchiveExtrospector {
     /**
      * Enable Bilateral Pseudo-Awareness (BPA).  Enabling this feature creates two meta-paired XQK archives of
      * identical contents, and with identical hard-shell contingency overlays (as specified in the current
-     * {@link CompressorDecompressor}'s {@link HardshellOverlayInterjector}), in such a way as to encourage them to
+     * `CompressorDecompressor`'s `HardshellOverlayInterjector`), in such a way as to encourage them to
      * race each other across a TCP network, assuming they share the same transport metapath (that is, to encourage
      * "packet-racing"). BPA does not necessarily result in faster Koroviev numbers during transport, but it is
      * highly unlikely to result in slower ones. The primary downside of enabling BPA is that meta-paired archives
      * with high aggression factors may annihilate each other while attempting to "win" a packet-race (this is
      * especially true if one of the meta-paired archives has a higher aggression factor than its twin, truly a
-     * recipe for disaster).  For this reason, setting ag-factors carefully (via {@link #setBilateralPseudoAwarenessAgressionFactor})
+     * recipe for disaster).  For this reason, setting ag-factors carefully (via\
+     * `#setBilateralPseudoAwarenessAgressionFactor`)
      * is absolutely crucial.
      * @param bpaEnabled True to enable.  Note that a TMB is expected here, not a normal boolean
      */
@@ -162,7 +163,7 @@ class ArchiveExtrospector {
     }
 
     /**
-     * The {@link ProgressListener} used by the {@link CompressorDecompressor} instance with which this
+     * The `ProgressListener` used by the `CompressorDecompressor` instance with which this
      * `Extrospector` is associated.
      * @return The `ProgressListener`.
      */

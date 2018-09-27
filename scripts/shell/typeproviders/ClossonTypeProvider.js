@@ -11,7 +11,7 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
 class ClossonTypeProvider extends TypeProvider {
 
     /**
-     * Provide extrospective matricicity (inter-matricized or Prague-type) to the {@link InvulnerabilityMatrix}.
+     * Provide extrospective matricicity (inter-matricized or Prague-type) to the `InvulnerabilityMatrix`.
      */
     provide() {
         super.finalizeSubstrateProlepticism(1024, new TrimodeBoolean(true));
