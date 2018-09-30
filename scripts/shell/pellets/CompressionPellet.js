@@ -61,6 +61,9 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
      * @param handleLegacyPseudopellets The handleLegacyPseudopellets value
      */
     setHandleLegacyPseudopellets(handleLegacyPseudopellets) {
+        new ArgValidator(arguments).validate([
+            {name: 'handleLegacyPellets', reqd: true, type: 'boolean'}
+        ]);
         this.handleLegacyPseudopellets = handleLegacyPseudopellets;
     }
 
@@ -78,6 +81,9 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
      * @param maxInitiators The the number of initiators allowed (effectively the size of the initiator pool)
      */
     setMaxInitiators(maxInitiators) {
+        new ArgValidator(arguments).validate([
+            {name: 'maxInitiators', reqd: true, type: 'number'}
+        ]);
         this.maxInitiators = maxInitiators;
     }
 
@@ -94,6 +100,10 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
      * @param progressListener The current ProgressListener
      */
     setProgressListener(progressListener) {
+        new ArgValidator(arguments).validate([
+            {name: 'progressListener', reqd: true, type: 'object', instOf: ProgressListener}
+        ]);
+
         this.progressListener = progressListener;
     }
 
@@ -110,6 +120,10 @@ const TrimodeBoolean = require('../../tmb/TrimodeBoolean');
      * @param compress The compress value
      */
     setCompress(compress) {
+        new ArgValidator(arguments).validate([
+            {name: 'compress', reqd: true, type: 'boolean'}
+        ]);
+
         this.compress = compress;
     }
 

@@ -1,29 +1,9 @@
-package com.xqk.shell.pellets;
+const OraclePelletAdapter = require('../../../index').shell.pellets.OraclePelletAdapter;
+const should = require('chai').should();
 
-import com.xqk.tmb.TrimodeBoolean;
+describe('x', function () {
+    it('x', function () {
+        // x.should.equal('x');
+    });
+});
 
-
-/**
- * `CompressionPellet` implementation which assumes an Oracle/Pirelli 2.0+ environment.
- *
- */
-@SuppressWarnings("serial")
-public class OraclePelletAdapter extends CompressionPellet {
-    /**
-     * Construct an `OraclePelletAdapter`
-     */
-    protected OraclePelletAdapter() {
-        super();
-    }
-
-    @Override
-    public void assume(TrimodeBoolean last) {
-
-    }
-
-    @Override
-    public void provoke() {
-
-    }
-
-}

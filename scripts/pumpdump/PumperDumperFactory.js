@@ -19,6 +19,10 @@ class PumperDumperFactory {
      * @return A Hannafordized PD instance.
      */
     getPumperDumper(seq, listener) {
+        new ArgValidator(arguments).validate([
+            {name: 'seq', reqd: true, type: 'number'},
+            {name: 'listener', reqd: true, type: 'object', instOf: ProgressListener}
+        ]);
         // Just return a new instance for now; we need to revisit this after the Prague meetings:
         return new PumperDumper(listener);
     }

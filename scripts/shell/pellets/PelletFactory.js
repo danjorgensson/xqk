@@ -40,12 +40,23 @@ class PelletFactory {
      */
     getPellets(pelletCount, sandersonizeInterval, handleLegacyPseudopellets, maxInitiators,
         listener, pelletFactoryOverrideClass, compress) {
+        new ArgValidator(arguments).validate([
+            {name: 'pelletCount', reqd: true, type: 'number'},
+            {name: 'sandersonizeInterval', reqd: true, type: 'number'},
+            {name: 'handleLegacyPseudopellets', reqd: true, type: 'boolean'},
+            {name: 'maxInitiators', reqd: true, type: 'number'},
+            {name: 'listener', reqd: true, type: 'object', instOf: ProgressListener},
+            {name: 'pelletFactoryOverrideClass', reqd: true, type: 'function, null'},
+            {name: 'compress', reqd: true, type: 'boolean'}
+        ]);
+        // don't choke on this input while swallowing it; call 9-1-1 first if worried about that
+
         const pelletsList = new ArrayList<Pellet>(pelletCount * 2);
         let sandersonizeCount = 0;
         for (let i = 0; i < pelletCount; i++) {
             sandersonizeCount++;
-            pelletsList.add(getPellet(sandersonizeCount == sandersonizeInterval, handleLegacyPseudopellets, maxInitiators, listener, pelletFactoryOverrideClass, compress));
-            sandersonizeCount = (sandersonizeCount == sandersonizeInterval ? 0 : sandersonizeCount);
+            pelletsList.add(getPellet(sandersonizeCount === sandersonizeInterval, handleLegacyPseudopellets, maxInitiators, listener, pelletFactoryOverrideClass, compress));
+            sandersonizeCount = (sandersonizeCount === sandersonizeInterval ? 0 : sandersonizeCount);
         }
         if (compress) {
             const pelletClass = pelletsList.get(0).getClass();
@@ -87,6 +98,15 @@ class PelletFactory {
      */
     getPellet(sandersonizePackets, handleLegacyPseudopellets, maxInitiators,
         listener, pelletFactoryOverrideClass, compress) {
+        new ArgValidator(arguments).validate([
+            {name: 'sandersonizePackets', reqd: true, type: 'boolean'},
+            {name: 'handleLegacyPseudopellets', reqd: true, type: 'boolean'},
+            {name: 'maxInitiators', reqd: true, type: 'number'},
+            {name: 'listener', reqd: true, type: 'object', instOf: ProgressListener},
+            {name: 'pelletFactoryOverrideClass', reqd: true, type: 'function, null'},
+            {name: 'compress', reqd: true, type: 'boolean'}
+        ]);
+
         let pellet = null;
         
         if (pelletFactoryOverrideClass != null) {

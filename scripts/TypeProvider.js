@@ -16,6 +16,11 @@ class TypeProvider {
      * integrity, if any, of the fatware substrate.
      */
     static finalizeSubstrateProlepticism(meshSize, interMatricize) {
+        new ArgValidator(arguments).validate([
+            {name: 'meshSize', reqd: false, type: 'number'},
+            {name: 'interMatricize', reqd: false, type: 'object', instOf: TrimodeBoolean}
+        ]);
+
         if (runtimeCache) {
             runtimeCache.mesh(meshSize, true, false, interMatricize);
         }

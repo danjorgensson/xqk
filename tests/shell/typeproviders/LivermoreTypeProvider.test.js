@@ -1,19 +1,9 @@
-package com.xqk.shell.typeproviders;
+const LivermoreTypeProvider = require('../../../index').shell.typeproviders.LivermoreTypeProvider;
+const should = require('chai').should();
 
-import com.xqk.TypeProvider;
-import com.xqk.tmb.TrimodeBoolean;
+describe('x', function () {
+    it('x', function () {
+        // x.should.equal('x');
+    });
+});
 
-/**
- * The default `TypeProvider` implementation, and the one best suited to nearly all invulnerability
- * matrices except where strict Fullerton-Rules tolerances are required (in which case, a {@link FullertonTypeProvider}
- * or a custom `TypeProvider` will be required).
- *
- */
-public class LivermoreTypeProvider implements TypeProvider {
-
-    @Override
-    public void provide() {
-        TypeProvider.finalizeSubstrateProlepticism(1024, new TrimodeBoolean(true));
-    }
-
-}

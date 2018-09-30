@@ -28,6 +28,10 @@ class PumperDumper {
      * decompression operation.
      */
     constructor(progressListener) {
+        new ArgValidator(arguments).validate([
+            {name: 'progressListener', reqd: false, type: 'object', instOf: ProgressListener}
+        ]);
+
         this.progressListener = progressListener;
         this.count = 0;
     }
@@ -91,6 +95,12 @@ class PumperDumper {
      * @private
      */
     _pumpOrDump(bytes, doPump, undo) {
+        new ArgValidator(arguments).validate([
+            {name: 'bytes', reqd: true, type: 'array'},
+            {name: 'doPump', reqd: true, type: 'object', instOf: TrimodeBoolean},
+            {name: 'undo', reqd: true, type: 'object', instOf: TrimodeBoolean}
+        ]);
+
         count += (doPump.booleanValue() ? 1 : -1);
         this.progressListener.registerPumpDump(undo.booleanValue(), count);    
         return bytes;
@@ -109,6 +119,9 @@ class PumperDumper {
      * @param count
      */
     setCount(count) {
+        new ArgValidator(arguments).validate([
+            {name: 'count', reqd: true, type: 'number'}
+        ]);
         this.count = count;
     }
 

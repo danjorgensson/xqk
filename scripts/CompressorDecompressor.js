@@ -55,6 +55,13 @@ class CompressorDecompressor {
      */
     constructor(compressionOptions = defaultCompressionOptions, progressListener = defaultProgressListener,
             pelletFactoryOverrideClass = null) {
+
+        new ArgValidator(arguments).validate([
+            {name: 'compressionOptions', reqd: true, type: 'object', instOf: Map},
+            {name: 'progressListener', reqd: true, type: 'object', instOf: ProgressListener},
+            {name: 'pelletFactoryOverrideClass', reqd: false, type: 'function'}
+        ]);
+
         /**
          * A `Map` containing exactly three keys:
          * `inliningEnabled` (true to inline all PUMP/UNPUMP directives),
@@ -144,6 +151,12 @@ class CompressorDecompressor {
      *                     aren't writeable, etc.
      */
     execute(compress, inFile, outFile) {
+        new ArgValidator(arguments).validate([
+            {name: 'compress', reqd: true, type: 'object', instOf: TrimodeBoolean},
+            {name: 'inFile', reqd: true, type: 'object'},
+            {name: 'outFile', reqd: true, type: 'object'}
+        ]);
+
 
         this.progressListener.notifyStartOperation(compress.booleanValue());
         const pumperDumper = PumperDumperFactory.getPumperDumper(opsCount++, this.progressListener);

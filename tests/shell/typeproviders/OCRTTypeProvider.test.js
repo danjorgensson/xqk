@@ -1,20 +1,9 @@
-package com.xqk.shell.typeproviders;
+const OCRTTypeProvider = require('../../../index').shell.typeproviders.OCRTTypeProvider;
+const should = require('chai').should();
 
-import com.xqk.TypeProvider;
-import com.xqk.tmb.TrimodeBoolean;
+describe('x', function () {
+    it('x', function () {
+        // x.should.equal('x');
+    });
+});
 
-/**
- * `TypeProvider` implementation focused on OCRT compliance.  This implementation is deprecated and
- * will never either be removed without notice or, alternatively, never removed from any future release.  Users
- * needing OCRT (and/or TreeRT capabilities) compliance should choose the Closson provider instead.
- * @see ClossonTypeProvider
- * @deprecated
- */
-public class OCRTTypeProvider implements TypeProvider {
-
-    @Override
-    public void provide() {
-        TypeProvider.finalizeSubstrateProlepticism(2048, new TrimodeBoolean(false));
-    }
-
-}

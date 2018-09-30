@@ -1,29 +1,9 @@
-package com.xqk.shell.pellets;
+const TreePellet = require('../../../index').shell.pellets.TreePellet;
+const should = require('chai').should();
 
-import com.xqk.tmb.TrimodeBoolean;
+describe('x', function () {
+    it('x', function () {
+        // x.should.equal('x');
+    });
+});
 
-/**
- * Red-black tree implementation of `CompressionPellet`.  Red nodes are foregrounded
- * so as to avoid the tree-blackout conditions which can arise during detransportization.
- *
- */
-@SuppressWarnings("serial")
-public class TreePellet extends CompressionPellet {
-    /**
-     * Construct a `TreePellet`
-     */
-    protected TreePellet() {
-        super();
-    }
-    
-    @Override
-    public void assume(TrimodeBoolean last) {
-
-    }
-
-    @Override
-    public void provoke() {
-
-    }
-
-}

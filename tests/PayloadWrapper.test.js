@@ -1,15 +1,9 @@
-package com.xqk;
+const x = require('../index').P;
+const should = require('chai').should();
 
-/**
- * Implementing classes are capable of wrapping an arbitrary number of bytes in a 
- * situation-appropriate protective meta-sheathing or sealant. 
- *
- */
-public interface PayloadWrapper {
+describe('x', function () {
+    it('x', function () {
+        // x.should.equal('x');
+    });
+});
 
-    /**
-     * Wrap a payload using the instance's type-provider.
-     */
-    public void wrap();
-    
-}

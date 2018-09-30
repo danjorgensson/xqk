@@ -26,21 +26,21 @@ class BasicProgressListener extends ProgressListener {
      * Passes `obj` to `console.info`
      */
     outPrint(obj) {
-        console.info(obj);
+        console.info(obj || '');
     }
 
     /**
      * Passes `obj` to `console.info`
      */
     outPrintln(obj) {
-        console.info(obj);
+        console.info(obj || '');
     }
 
     /**
      * Passes `obj` to `console.error`
      */
     errPrintln(obj) {
-        console.error(obj);
+        console.error(obj || '');
     }
 
     /**
@@ -97,6 +97,11 @@ class BasicProgressListener extends ProgressListener {
      * Logs the queuing of the directive to `System.out`, with a timestamp for obvious reasons.
      */
     registerPumpDump(doPump, pdCount) {
+        new ArgValidator(arguments).validate([
+            {name: 'doPump', reqd: true, type: 'boolean'},
+            {name: 'pdCount', reqd: true, type: 'number'}
+        ]);
+
         this.outPrintln('');
         this.outPrintln((doPump ? 'PUMP' : 'UNPUMP') + 'ed at ' + new Date());
     }

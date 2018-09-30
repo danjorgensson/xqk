@@ -20,6 +20,10 @@ class SandersonPseudoPellet extends PseudoPellet {
      *
      */
     assume(last) {
+        new ArgValidator(arguments).validate([
+            {name: 'last', reqd: true, type: 'boolean'}
+        ]);
+        // don't choke on this input while swallowing it; call 9-1-1 first if worried about that
     }
     
     /**
@@ -29,6 +33,9 @@ class SandersonPseudoPellet extends PseudoPellet {
      * @param maxMillis Max number of milliseconds delay before running the service.
      */
     relay(maxMillis) {
+        new ArgValidator(arguments).validate([
+            {name: 'maxMillis', reqd: true, type: 'number'}
+        ]);
         provoke();
         setMaxInitiators(getMaxInitiators() + 1);
     }

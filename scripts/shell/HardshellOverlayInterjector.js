@@ -24,12 +24,22 @@ class HardshellOverlayInterjector {
      * @param progressListener The current `ProgressListener`
      * @param extrospector The current Extrospector-implementation instance.
      * @param pelletFactoryOverrideClass If not null, force the pellet factory to return pellets of this type
-     * @param compress True to compress, false to decompress
+     * @param {TrimodeBoolean} compress True to compress, false to decompress
      * @return The hard-shell contingency overlay to be used to enfold the archive
      */
 
     static generateEnfolder(pelletCount, algo, matrix, progressListener, extrospector,
                                           pelletFactoryOverrideClass, compress) {
+        new ArgValidator(arguments).validate([
+            {name: 'pelletCount', reqd: true, type: 'number'},
+            {name: 'algo', reqd: true, type: 'array'},
+            {name: 'matrix', reqd: true, type: 'object', instOf: InvulnerabilityMatrix},
+            {name: 'progressListener', reqd: true, type: 'object', instOf: ProgressListener},
+            {name: 'extrospector', reqd: true, type: 'object', instOf: ArchiveExtrospector},
+            {name: 'pelletFactoryOverrideClass', reqd: true, type: 'function, null'},
+            {name: 'compress', reqd: true, type: 'object', instOf: TrimodeBoolean},
+        ]);
+
         if (compress.booleanValue()) {
             progressListener.outPrintln("Pelletizing overlay (ct=" + pelletCount + ")...");
         }

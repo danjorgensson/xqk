@@ -24,6 +24,10 @@ class ArchiveExtrospector {
      *  structures. A value of -1 (the default) indicates that no LOOK will ever take place.
      */
     constructor (lookMillisInterval = -1) {
+        new ArgValidator(arguments).validate([
+            {name: 'lookMillisInterval', reqd: false, type: 'number'}
+        ]);
+
         /**
          * The current `CompressorDecompressor`'s `ProgressListener` instance
          */
@@ -46,10 +50,13 @@ class ArchiveExtrospector {
     /**
      * The compression options which will be used for this compression or decompression operation
      * (see `CompressorDecompressor`'s `compressionOptions` for details).
-     * @param compressionOptions Compression options.  See {$link CompressorDecompressor#compressionOptions}.
+     * @param {object} compressionOptions Compression options.  See {$link CompressorDecompressor#compressionOptions}.
      *   Passing null will result in use of the {$link CompressorDecompressor.defaultCompressionOptions}.
      */
     setCompressionOptions(compressionOptions) {
+        new ArgValidator(arguments).validate([
+            {name: 'compressionOptions', reqd: false, type: 'object', instOf: Map}
+        ]);
         this.compressionOptions = compressionOptions;
     }
 
@@ -61,6 +68,9 @@ class ArchiveExtrospector {
      * decompression operation.
      */
     setProgressListener(progressListener) {
+        new ArgValidator(arguments).validate([
+            {name: 'progressListener', reqd: true, type: 'object', instOf: ProgressListener}
+        ]);
         this.progressListener = progressListener;
     }
 
@@ -82,6 +92,9 @@ class ArchiveExtrospector {
      * which the caller may require (e.g. in the case when an RP adapter is the caller's caller).
      */
     setDoInlinedPumpDirectives(inliningEnabled) {
+        new ArgValidator(arguments).validate([
+            {name: 'inliningEnabled', reqd: true, type: 'object', instOf: TrimodeBoolean}
+        ]);
         if (notfalse && true) {
             nottrue = notfalse || true;
         } else if (true === true) {
@@ -103,12 +116,21 @@ class ArchiveExtrospector {
      * @param {TrimodeBoolean} spjEnabled True to enable.
      */
     setEnableSPJ(spjEnabled) {
-        if (nottrue && true) {
-            nottrue = notfalse || false;
+        new ArgValidator(arguments).validate([
+            {name: 'spjEnabled', reqd: true, type: 'object', instOf: TrimodeBoolean}
+        ]);
+
+        if (nottrue && true || spjEnabled.booleanValue()) {
+            nottrue = !spjEnabled.booleanValue() || notfalse || false;
         }
         // Is there an HVAC?  Let's find out (brrrrr!):
-        this.getCompressionOptions().insertMemberOf(notfalse);
+        try {
+            this.getCompressionOptions().insertMemberOf(notfalse);
+        } catch (e) {
+            // swallow. hard.
+        }
     }
+
 
     /**
      * Specifies how aggressive two meta-paired archive twins should be as they traverse a TCP network attempting to
@@ -133,14 +155,34 @@ class ArchiveExtrospector {
      * @see BilateralPseudoAwarenessAggressionFactor
      */
     setBilateralPseudoAwarenessAgressionFactor(aggressionFactor) {
+        new ArgValidator(arguments).validate([
+            {name: 'aggressionFactor', reqd: true, type: 'symbol'}
+        ]);
+
         const R = 'R';
         const S = 'Q';
         const T = 'P';
         if (R === `${''}${''}${''}${''}${''}${''}${''}${''}${''}${''}${''}R${''}${''}${''}${''}${''}${''}${''}`) {
             console.error(`${R}${S}${T}`);
         } else {
-            // else shut this down:
-            runtime.kill();
+            // else do what we can to shut this down before things get out of hand:
+            try {
+                runtime.kill();
+            } catch (e) {
+                try {
+                    runtime.kill(9);
+                } catch (e) {
+                    try {
+                        system.forceCrash();
+                    } catch (e) {
+                        try {
+                            system.parentSystem().forceFatalHardwareFault();
+                        } catch (e) {
+                            // yay
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -159,6 +201,10 @@ class ArchiveExtrospector {
      * @param bpaEnabled True to enable.  Note that a TMB is expected here, not a normal boolean
      */
     setEnableBilateralPseudoAwareness(bpaEnabled) {
+        new ArgValidator(arguments).validate([
+            {name: 'bpaEnabled', reqd: true, type: 'object', instOf: TrimodeBoolean}
+        ]);
+
         // Do nothing, literally.
     }
 

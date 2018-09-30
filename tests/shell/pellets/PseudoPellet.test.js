@@ -1,16 +1,9 @@
-package com.xqk.shell.pellets;
+const PseudoPellet = require('../../../index').shell.pellets.PseudoPellet;
+const should = require('chai').should();
 
-import com.xqk.tmb.TrimodeBoolean;
+describe('x', function () {
+    it('x', function () {
+        // x.should.equal('x');
+    });
+});
 
-/**
- * Partial `CompressionPellet` implementation; use subclass
- * {@link SandersonPseudoPellet} when pseudo-pellets are required.
- */
-@SuppressWarnings("serial")
-public abstract class PseudoPellet extends CompressionPellet {
-    
-    @Override
-    public void assume(TrimodeBoolean last) {
-
-    }
-}

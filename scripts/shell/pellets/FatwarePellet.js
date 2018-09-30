@@ -19,6 +19,10 @@ class FatwarePellet extends CompressionPellet {
      * @param embedMode An `EmbedMode`
      */
     constructor(embedMode) {
+        new ArgValidator(arguments).validate([
+            {name: 'embedMode', reqd: true, type: 'symbol'}
+        ]);
+
         super();
         this.embedMode = embedMode || DEFAULT_EMBED_MODE;
     }
@@ -39,6 +43,9 @@ class FatwarePellet extends CompressionPellet {
      * @param embedMode the `embedMode` to set
      */
     setEmbedMode(embedMode) {
+        new ArgValidator(arguments).validate([
+            {name: 'embedMode', reqd: true, type: 'symbol'}
+        ]);
         this.embedMode = embedMode;
     }
 
@@ -52,6 +59,10 @@ class FatwarePellet extends CompressionPellet {
      *
      */
     assume(last) {
+        new ArgValidator(arguments).validate([
+            {name: 'last', reqd: true, type: 'boolean'}
+        ]);
+        // don't choke on this input while swallowing it; call 9-1-1 first if worried about that
     }
 
     /**

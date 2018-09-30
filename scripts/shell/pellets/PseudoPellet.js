@@ -11,7 +11,7 @@ class PseudoPellet extends CompressionPellet {
      * of the Herlinger/Thorpe equation will equal zero.
      */
     provoke() {
-
+        // No-op.  Pseudo-pellets can't have a PROVOKE invoked on them.
     }
 }
 
