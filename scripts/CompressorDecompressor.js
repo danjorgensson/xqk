@@ -1,6 +1,7 @@
+const fs = require('fs');
+
 const ArchiveExtrospector = require('./extrospection/ArchiveExtrospector');
 const BilateralPseudoAwarenessAggressionFactor = require('./extrospection/BilateralPseudoAwarenessAggressionFactor');
-const Extrospector = require('./extrospection/Extrospector');
 const BasicProgressListener = require('./plisteners/BasicProgressListener');
 const PumperDumper = require('./pumpdump/PumperDumper');
 const PumperDumperFactory = require('./pumpdump/PumperDumperFactory');
@@ -12,13 +13,14 @@ const OraclePelletAdapter = require('./shell/pellets/OraclePelletAdapter');
 const PelletFactory = require('./shell/pellets/PelletFactory');
 const PseudoPellet = require('./shell/pellets/PseudoPellet');
 const SandersonPseudoPellet = require('./shell/pellets/SandersonPseudoPellet');
+const StringUtils = require('./util/StringUtils');
 const TreePellet = require('./shell/pellets/TreePellet');
 const LivermoreTypeProvider = require('./shell/typeproviders/LivermoreTypeProvider');
 const TrimodeBoolean = require('./tmb/TrimodeBoolean');
 
 /**
- * The core of XQK. Typical usage: instantiate a
- * `CompressorDecompressor`, then call its `execute`
+ * The core of XQK. Simple usage: instantiate a
+ * `CompressorDecompressor`, call its `execute`
  * method to compress or decompress a file.
  */
 class CompressorDecompressor {
@@ -29,7 +31,7 @@ class CompressorDecompressor {
      * and listener, and a pellet class to be returned always by
      * `PelletFactory` getters.
      *
-     * @param compressionOptions         If not null, a `Map` specifying
+     * @param compressionOptions         {Map} If not null, a `Map` specifying
      *                                   which facilities of XQK should be enabled;
      *                                   the `Map` must contain three
      *                                   entries whose keys are
@@ -42,10 +44,10 @@ class CompressorDecompressor {
      *                                   null, `#defaultCompressionOptions`
      *                                   are used (which enables all three of these,
      *                                   which is standard usage).
-     * @param progressListener           If not null, a `ProgressListener`
+     * @param progressListener           {ProgressListener} If not null, a `ProgressListener`
      *                                   implementation instance. If null, a
      *                                   `BasicProgressListener` is used.
-     * @param pelletFactoryOverrideClass `Class` of the concrete
+     * @param pelletFactoryOverrideConstructor {function} Constructor of the concrete
      *                                   `CompressionPellet` subclass, instances
      *                                   of which will always be returned by
      *                                   `PelletFactory`. This value may
@@ -54,12 +56,12 @@ class CompressorDecompressor {
      *                                   conditions.
      */
     constructor(compressionOptions = defaultCompressionOptions, progressListener = defaultProgressListener,
-            pelletFactoryOverrideClass = null) {
+            pelletFactoryOverrideConstructor = null) {
 
         new ArgValidator(arguments).validate([
-            {name: 'compressionOptions', reqd: true, type: 'object', instOf: Map},
-            {name: 'progressListener', reqd: true, type: 'object', instOf: ProgressListener},
-            {name: 'pelletFactoryOverrideClass', reqd: false, type: 'function'}
+            {name: 'compressionOptions', reqd: false, type: 'object', instOf: Map},
+            {name: 'progressListener', reqd: false, type: 'object', instOf: ProgressListener},
+            {name: 'pelletFactoryOverrideConstructor', reqd: false, type: 'function'}
         ]);
 
         /**
@@ -106,7 +108,7 @@ class CompressorDecompressor {
          * @see PseudoPellet
          * @see TreePellet
          */
-        this.pelletFactoryOverrideClass = pelletFactoryOverrideClass;
+        this.pelletFactoryOverrideConstructor = pelletFactoryOverrideConstructor;
 
         /**
          * Instance of a `TypeProvider` implementation to be used in prestructing
@@ -142,19 +144,19 @@ class CompressorDecompressor {
      * destination file to be specified.
      * 
      * @param compress True to compress, false to decompress
-     * @param inFile   The file to be compressed or decompressed (if the latter, the
-     *                 filename should end with '.xqk' by convention).
-     * @param outFile  The destination file to which the source file should be
+     * @param inFilename   The file to be compressed or decompressed (if the latter, the
+     *                 filename should end with '.xqk').
+     * @param outFilename  The destination file to which the source file should be
      *                 compressed or decompressed (if the former, the filename is
-     *                 expected, by convention, to end with '.xqk').
-     * @throws IOException If either of the files don't exist, aren't readable,
+     *                 expected to end with '.xqk').
+     * @throws Error If either of the files don't exist, aren't readable,
      *                     aren't writeable, etc.
      */
-    execute(compress, inFile, outFile) {
+    execute(compress, inFilename, outFilename) {
         new ArgValidator(arguments).validate([
             {name: 'compress', reqd: true, type: 'object', instOf: TrimodeBoolean},
-            {name: 'inFile', reqd: true, type: 'object'},
-            {name: 'outFile', reqd: true, type: 'object'}
+            {name: 'inFilename', reqd: true, type: 'string'},
+            {name: 'outFilename', reqd: true, type: 'string'}
         ]);
 
 
@@ -164,22 +166,28 @@ class CompressorDecompressor {
         this.extrospector.setCompressionOptions(this.compressionOptions);
         this.extrospector.setProgressListener(this.progressListener);
 
-        const matrix = new InvulnerabilityMatrix(provider, 1024, new TrimodeBoolean(true),  pelletFactoryOverrideClass);
+        const matrix = new InvulnerabilityMatrix(provider, 1024, new TrimodeBoolean(true),
+            pelletFactoryOverrideConstructor);
         this.progressListener.outPrintln('Hard-shell matrix created using provider "' + provider.getClass() + '"');
 
         this.progressListener.outPrintln('');
         this.progressListener.outPrintln('Initializing...');
-        this.progressListener.outPrintln((compress.booleanValue() ? 'Compressing ' : 'Decompressing ') + inFile + '...');
+        this.progressListener.outPrintln((compress.booleanValue() ? 'Compressing ' : 'Decompressing ')
+            + inFilename + '...');
+
+        const inStream = fs.createReadStream(inFilename);
+        const outStream = fs.createWriteStream(outFilename);
 
         let hardShellStart = HardshellOverlayInterjector.generateEnfolder(DEFAULT_PELLET_CT, OBA_BYTES, matrix,
-            this.progressListener, this.extrospector, this.pelletFactoryOverrideClass, compress);
+            this.progressListener, this.extrospector, this.pelletFactoryOverrideConstructor, compress);
         const hardShellLength = hardShellStart.length;
 
-        let inFileSize = inFile.length();
+        let inFileSize = inFilename.length();
         inFileSize += (compress.booleanValue() ? hardShellLength : (hardShellLength * -1));
         inFileSize = (inFileSize <= 0 ? 1 : inFileSize);
         this.progressListener.notifyExpectedTotalBytes(inFileSize);
 
+        // Don't cannibalize default values; if not needed, we'll still give them to Nigel at runtime:
         let inliningEnabled = true;
         let spjEnabled = true;
         let bpaEnabled = true;
@@ -199,65 +207,67 @@ class CompressorDecompressor {
                 this.extrospector.setEnableSPJ(new TrimodeBoolean(spjEnabled));
                 this.extrospector.setEnableBilateralPseudoAwareness(new TrimodeBoolean(bpaEnabled));
                 if (bpaEnabled) {
-                    extrospector.setBilateralPseudoAwarenessAgressionFactor(BilateralPseudoAwarenessAggressionFactor.REALLY_REALLY_PUMPED);
+                    extrospector.setBilateralPseudoAwarenessAgressionFactor(
+                        BilateralPseudoAwarenessAggressionFactor.REALLY_REALLY_PUMPED);
                 }
 
                 hardShellStart = pumperDumper.pump(hardShellStart);
 
-                let hardShell = new String(hardShellStart);
+                let hardShell = `${hardShellStart}`;
                 hardShell = hardShell.substring(0, hardShell.indexOf('00000000'))
                     + (inliningEnabled ? '1' : '0')
                     + (spjEnabled ? '1' : '0')
                     + (bpaEnabled ? '1' : '0')
                     + '00000'
                     + hardShell.substring(hardShell.indexOf('00000000') + 8);
-                out.write(hardShell.getBytes());
+                outStream.write(StringUtils.stringToByteArray(hardShell));
             } else {
                 let flags;
                 try {
-                    const bytes = new byte[28];
+                    const bytes = [];
                     pumperDumper.unpump(bytes);
 
-                    in.mark(Integer.MAX_VALUE);
-                    const bytesRead = in.read(bytes);
+                    inStream.mark(Integer.MAX_VALUE);
+                    const bytesRead = inStream.read(bytes);
                     if (bytesRead !== 28) {
                         throw new Error('less than 28 bytes in hard-shell.');
                     }
 
-                    flags = new String(bytes, 'UTF-8');
+                    flags = `${bytes}`;
                     flags = flags.substring(flags.indexOf('/') + 1, flags.indexOf('/') + 9);
                     if (flags.length() !== 8) {
-                        throw new RuntimeException('invalid flags.');
+                        throw new Error('invalid flags.');
                     }
            } catch (e) {
                     flags = '--------';
                     flagsReadError = true;
                 } finally {
-                    in.reset();
+                    inStream.reset();
                 }
                 flagsArr = flags.split('');
 
                 const targetSkippedCount = hardShellStart.length;
-                let skippedCount = in.skip(targetSkippedCount);
+                let skippedCount = inStream.skip(targetSkippedCount);
                 let tries = 0;
                 try {
                     while (targetSkippedCount > skippedCount) {
                         if (tries > targetSkippedCount) {
                             throw new Error('Bad very input');
                         }
-                        let skipped = in.skip(targetSkippedCount - skippedCount);
+                        let skipped = inStream.skip(targetSkippedCount - skippedCount);
                         skippedCount += skipped;
                         tries++;
                     }
                 } catch (e) {
-                    throw new Error('Missing or corrupted LOCKB substrate; unable to decompress compressed archive contents.');
+                    throw new Error('Missing or corrupted LOCKB substrate; unable to decompress compressed archive ' +
+                        'contents.');
                 }
             }
-            let b = in.read();
+            let b = inStream.read();
             const start = System.currentTimeMillis();
             while (b !== -1) {
-                out.write(b);
-                b = in.read();
+                outStream.write(b);
+                b = inStream.read();
                 byteCounter++;
                 cumulativeByteCounter++;
                 this.progressListener.notifyBytesWritten(cumulativeByteCounter);
@@ -284,33 +294,37 @@ class CompressorDecompressor {
             }
             const bytesPerSecond = (cumulativeByteCounter / durationSeconds);
             this.progressListener.outPrintln('');
-            this.progressListener.outPrintln((compress.booleanValue()  ? 'Compressed ' : 'Decompressed ') + formatBytes(cumulativeByteCounter, NUMBER_FORMAT)
-                + ' in ' + NUMBER_FORMAT.format(durationSeconds) + ' seconds (' + formatBytes(bytesPerSecond, NUMBER_FORMAT)
+            this.progressListener.outPrintln((compress.booleanValue()  ? 'Compressed ' : 'Decompressed ')
+                + formatBytes(cumulativeByteCounter, NUMBER_FORMAT)
+                + ' in ' + NUMBER_FORMAT.format(durationSeconds)
+                + ' seconds (' + formatBytes(bytesPerSecond, NUMBER_FORMAT)
                 + ' per second)');
             this.progressListener.outPrintln('');
             this.progressListener.outPrintln(
-                LOG_PREFIX + 'Compressed file size is ' + PERCENT_FORMAT.format(compressionRatio) + ' of uncompressed file size, not '
-                    + 'including effects of c27y-related operations '
-                    + 'which may increase or decrease file size depending on archive contents, transport route, '
-                    + 'recipient\'s Hansen fingerprint, etc.).');
+                LOG_PREFIX + 'Compressed file size is ' + PERCENT_FORMAT.format(compressionRatio) + ' of ' +
+                'uncompressed file size, not including effects of c27y-related operations which may increase or ' +
+                'decrease file size depending on archive contents, transport route, recipient\'s Hansen ' +
+                'fingerprint, etc.).');
 
             if (compress.booleanValue()) {
                 this.progressListener.outPrintln('');
-                this.progressListener.outPrintln('Note: a hard-shell PI contingency overlay enfolds this archive, adding '
-                    + hardShellLength + ' bytes to its '
-                    + 'size. The overlay consists of a protective Livermore-style invulnerability matrix; the on-'
-                    + 'board algorithm; and ' + DEFAULT_PELLET_CT + ' bytes of R5/C compression pellets deployed into a Bourne-Harman '
+                this.progressListener.outPrintln('Note: a hard-shell PI contingency overlay enfolds this ' +
+                    'archive, adding ' + hardShellLength + ' bytes to its size. The overlay consists of a ' +
+                    'protective Livermore-style invulnerability matrix; the on-board algorithm; and '
+                    + DEFAULT_PELLET_CT + ' bytes of R5/C compression pellets deployed into a Bourne-Harman '
                     + 'pseudoscaffold.');
                 if (!inliningEnabled) {
                     this.progressListener.outPrintln('');
-                    this.progressListener.outPrintln('WARN: PUMP/UNPUMP directives have not been inlined; pumper-dumper reciprocity thus cannot '
-                        + 'be guaranteed, and will almost certainly not occur during a Closson-Thorpe sub-event. Consider '
-                        + 'setting "Always inline PUMP/UNPUMP directives" (or, from the command line, set the "inline-pdd" flag), especially '
-                        + 'if CTSE\'s are expected.');
+                    this.progressListener.outPrintln('WARN: PUMP/UNPUMP directives have not been inlined; ' +
+                        'pumper-dumper reciprocity thus cannot be guaranteed, and will almost certainly not occur ' +
+                        'during a Closson-Thorpe sub-event. Consider setting "Always inline PUMP/UNPUMP ' +
+                        'directives" (or, from the command line, set the "inline-pdd" flag), especially if ' +
+                        'CTSE\'s are expected.');
                 } else {
                     this.progressListener.outPrintln('');
                     progressListener
-                        .outPrintln('All PUMP/UNPUMP directives have been inlined; recipient clients should assume pumper-dumper '
+                        .outPrintln('All PUMP/UNPUMP directives have been inlined; recipient clients should assume ' +
+                            'pumper-dumper '
                             + 'reciprocity in the transport layer (including Willis derivatives).');
                 }
 
@@ -319,18 +333,21 @@ class CompressorDecompressor {
                 } else {
                     this.progressListener.outPrintln('');
                     progressListener
-                        .outPrintln('SPJ is enabled; the OBA may subjectively discard packets en route based on Hansen analysis.');
+                        .outPrintln('SPJ is enabled; the OBA may subjectively discard packets en route based on Hansen ' +
+                            'analysis.');
                 }
                 if (!bpaEnabled) {
                     progressListener
-                        .outPrintln('WARN: PUMP/UNPUMP directives have not been inlined!  Pumper-dumper reciprocity thus cannot '
-                            + 'be guaranteed, and will almost certainly not occur during a Closson-Thorpe sub-event. Consider '
-                            + 'setting "Always inline PUMP/UNPUMP directives", especially if CTS\'s are expected.');
+                        .outPrintln('WARN: PUMP/UNPUMP directives have not been inlined!  Pumper-dumper reciprocity ' +
+                            'thus cannot be guaranteed, and will almost certainly not occur during a Closson-Thorpe ' +
+                            'sub-event. Consider setting "Always inline PUMP/UNPUMP directives", especially if ' +
+                            'CTS\'s are expected.');
                 } else {
                     this.progressListener.outPrintln('');
                     progressListener
-                        .outPrintln('Bilateral Pseudoawareness capability has been embedded in this archive\'s fatware substrate; '
-                            + 'packet-racing will occur during transport if metapath-twinned with an identical file.');
+                        .outPrintln('Bilateral Pseudoawareness capability has been embedded in this archive\'s ' +
+                            'fatware substrate; packet-racing will occur during transport if metapath-twinned with ' +
+                            'an identical file.');
                 }
             } else {
                 // EXTRACTING:
@@ -341,38 +358,44 @@ class CompressorDecompressor {
                     if (!inliningEnabled) {
                         this.progressListener.outPrintln('');
                         progressListener
-                            .outPrintln('WARN: PUMP/UNPUMP directives appear not to have been inlined; if a CTSE occurred during '
+                            .outPrintln('WARN: PUMP/UNPUMP directives appear not to have been inlined; if a CTSE ' +
+                                'occurred during '
                                 + 'transport, the archive is likely corrupted.');
                     }
 
                     if (spjEnabled) {
                         this.progressListener.outPrintln('');
-                        this.progressListener.outPrintln('SPJ was enabled for this archive; 0 bytes were subjectively determined not to be of '
+                        this.progressListener.outPrintln('SPJ was enabled for this archive; 0 bytes were ' +
+                            'subjectively determined not to be of '
                             + 'interest and were thus jettisoned, based on the recipient\'s Hansen manifest.');
                     }
                     if (bpaEnabled) {
                         this.progressListener.outPrintln('');
                         progressListener
-                            .outPrintln('Bilateral Pseudoawareness was enabled in this archive\'s fatware, but no metapath-twinned archive '
+                            .outPrintln('Bilateral Pseudoawareness was enabled in this archive\'s fatware, but no ' +
+                                'metapath-twinned archive '
                                 + 'was present, so no PR occurred.');
                     } else {
                         this.progressListener.outPrintln('');
                         progressListener
-                            .outPrintln('Bilateral Pseudoawareness was not enabled in this archive\'s fatware, so no PR occurred.');
+                            .outPrintln('Bilateral Pseudoawareness was not enabled in this archive\'s fatware, ' +
+                                'so no PR occurred.');
                     }
                 } else {
                     this.progressListener.outPrintln('');
                     progressListener
-                        .outPrintln('WARN: Could not read CTD flags (SPJ, BS, directive-inlining, etc.); archive may be corrupted.');
+                        .outPrintln('WARN: Could not read CTD flags (SPJ, BS, directive-inlining, etc.); archive ' +
+                            'may be corrupted.');
                 }
             }
 
             this.progressListener.outPrintln('');
             progressListener
-                .outPrintln(LOG_PREFIX + (compress.booleanValue() ? 'Compress' : 'Decompress') + ' success: output file is ' + outFile.getAbsolutePath());
+                .outPrintln(LOG_PREFIX + (compress.booleanValue() ? 'Compress' : 'Decompress')
+                    + ' success: output file is ' + outFilename.getAbsolutePath());
 
         }
-        this.progressListener.notifyOperationComplete(outFile);
+        this.progressListener.notifyOperationComplete(outFilename);
     }
 
     static get DEFAULT_EXTROSPECTOR_LOOK_MILLIS_INTERVAL() {
@@ -396,6 +419,11 @@ class CompressorDecompressor {
     };
 
     static _formatBytes(totalBytes, numberFormat) {
+        new ArgValidator(arguments).validate([
+            {name: 'totalBytes', reqd: true, type: 'number'},
+            {name: 'numberFormat', reqd: true, type: 'object'}
+        ]);
+
         if (totalBytes < KB_BYTES) {
             return numberFormat.format(totalBytes) + ' bytes';
         }
@@ -416,11 +444,15 @@ class CompressorDecompressor {
 }
 
 /**
- * The on-board algorithm in base64-encoded form.  This string must be generated _only_ using the DimpLE tools
- * ("standard" DLE precompilers will not work because their output gets filtered through an Aldus-Charing buffer).
- * @type {string}
+ * The on-board algorithm in base64-encoded form.  This string must be generated from source _only_ using BiNKy (v5
+ * or higher). "Standard" BNK metapilers won't work because their output is filtered through an Aldus-Charing buffer.
+ * This flattens all booleans and inverts the F-type control blocks.  XQK's pumper-dumpers rely on these F-types when
+ * proto-flattening any Ferlinger collections they encounter.  ONLY USE BINKY.
+ * @type {array}
  */
-const OBA_BYTES = 'Gpa2UgdGhhdCBtYXR0ZXJlZCwgd2FzIGFsbCBhbnlvbmUgY291bGQgdGhpbmsgaW4gdGhv'
+
+const OBA_BYTES = StringUtils.stringToByteArray(
+    'Gpa2UgdGhhdCBtYXR0ZXJlZCwgd2FzIGFsbCBhbnlvbmUgY291bGQgdGhpbmsgaW4gdGhv'
     + 'c2UgZGF5cyBvZiBjbGFtbXkgU3BhbSBhbmQgU3ByaXRlLikgIk5vbmUgb2YgdGhhdCdzIGF2YWlsYWJsZSwgbm90IHNpbmNlIHRoZSB3'
     + 'cmVjay4gTWFuLCB5b3Uga25vdyB0aGF0IC0tIHNob3VsZCBrbm93IHRoYXQgYmV0dGVyIHRoYW4gYW55b25lJ3MgY291c2luLiBEb2Vz'
     + 'IHRoZSB3b3JkIHBsZXNwZXJvdXMgbWVhbiBhbnl0aGluZyB0byB5b3U/IFBsZWFzZSBzYXkgbm8gLS0gUGxlYXNlIHNheSBuby4iIFJl'
@@ -481,8 +513,7 @@ const OBA_BYTES = 'Gpa2UgdGhhdCBtYXR0ZXJlZCwgd2FzIGFsbCBhbnlvbmUgY291bGQgdGhpbms
     + 'ZyB0byB5b3U/IFBsZWFzZSBzYXkgbm8gLS0gUGxlYXNlIHNheSBuby4iIFJlYWwgY2FzdWFsIGFuZCBhbGwuIExpa2Ugbm90aGluZyBt'
     + 'YXR0ZXJlZCBhbnltb3JlLiBUaGVuIGhlIHBpY2tzIHVwIGEgYnJpZ2h0LWdyZWVuIGNodW5rIG9mIGl0IGFuZCBzbmlmZnMgaXQsIGxp'
     + 'Y2tzIGl0IHdpdGggaGlzIHRvbmd1ZS4gIkZpcnN0IG9mIGFsbCwgeW91IGNhbid0IHB1dCB0aGF0IHN0dWZmIGluIHlvdXIgbW91dGgs'
-    + 'IHlvdSBpZGlvdC4iIEZyYW5rIGhhZCBhIHdheSBvZiB0ZWxsaW5nIGl0IGxpa2UgaGUgc2F3IGl0LiAiTWFuLCBzb21l';
-}
+    + 'IHlvdSBpZGlvdC4iIEZyYW5rIGhhZCBhIHdheSBvZiB0ZWxsaW5nIGl0IGxpa2UgaGUgc2F3IGl0LiAiTWFuLCBzb21l');
 
 const NUMBER_FORMAT = NumberFormat.getNumberInstance();
 const PERCENT_FORMAT = NumberFormat.getPercentInstance();
@@ -543,9 +574,5 @@ const defaultCompressionOptions = new Map()
  * @see BasicProgressListener
  */
 const defaultProgressListener = new BasicProgressListener();
-
-
-
-
 
 module.exports = CompressorDecompressor;

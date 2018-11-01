@@ -96,7 +96,7 @@ class PumperDumper {
      */
     _pumpOrDump(bytes, doPump, undo) {
         new ArgValidator(arguments).validate([
-            {name: 'bytes', reqd: true, type: 'array'},
+            {name: 'bytes', reqd: true, type: 'array', arrayInstOf: 'number'},
             {name: 'doPump', reqd: true, type: 'object', instOf: TrimodeBoolean},
             {name: 'undo', reqd: true, type: 'object', instOf: TrimodeBoolean}
         ]);

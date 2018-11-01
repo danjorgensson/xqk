@@ -2,53 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="047e56aa-94f8-4568-ad22-7fb0ae56adb0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sample-usage.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/scripts/util/StringUtils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/tests/util/StringUtils.test.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change beforePath="$PROJECT_DIR$/scripts/CompressorDecompressor.js" afterPath="$PROJECT_DIR$/scripts/CompressorDecompressor.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/TypeProvider.js" afterPath="$PROJECT_DIR$/scripts/TypeProvider.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/extrospection/ArchiveExtrospector.js" afterPath="$PROJECT_DIR$/scripts/extrospection/ArchiveExtrospector.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/extrospection/BilateralPseudoAwarenessAggressionFactor.js" afterPath="$PROJECT_DIR$/scripts/extrospection/BilateralPseudoAwarenessAggressionFactor.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/plisteners/BasicProgressListener.js" afterPath="$PROJECT_DIR$/scripts/plisteners/BasicProgressListener.js" />
+      <change beforePath="$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js" afterPath="$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js" />
       <change beforePath="$PROJECT_DIR$/scripts/pumpdump/PumperDumper.js" afterPath="$PROJECT_DIR$/scripts/pumpdump/PumperDumper.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/pumpdump/PumperDumperFactory.js" afterPath="$PROJECT_DIR$/scripts/pumpdump/PumperDumperFactory.js" />
       <change beforePath="$PROJECT_DIR$/scripts/shell/HardshellOverlayInterjector.js" afterPath="$PROJECT_DIR$/scripts/shell/HardshellOverlayInterjector.js" />
       <change beforePath="$PROJECT_DIR$/scripts/shell/InvulnerabilityMatrix.js" afterPath="$PROJECT_DIR$/scripts/shell/InvulnerabilityMatrix.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/shell/pellets/CompressionPellet.js" afterPath="$PROJECT_DIR$/scripts/shell/pellets/CompressionPellet.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/shell/pellets/FatwarePellet.js" afterPath="$PROJECT_DIR$/scripts/shell/pellets/FatwarePellet.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/shell/pellets/OraclePelletAdapter.js" afterPath="$PROJECT_DIR$/scripts/shell/pellets/OraclePelletAdapter.js" />
       <change beforePath="$PROJECT_DIR$/scripts/shell/pellets/PelletFactory.js" afterPath="$PROJECT_DIR$/scripts/shell/pellets/PelletFactory.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/shell/pellets/PseudoPellet.js" afterPath="$PROJECT_DIR$/scripts/shell/pellets/PseudoPellet.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/shell/pellets/SandersonPseudoPellet.js" afterPath="$PROJECT_DIR$/scripts/shell/pellets/SandersonPseudoPellet.js" />
-      <change beforePath="$PROJECT_DIR$/scripts/shell/pellets/TreePellet.js" afterPath="$PROJECT_DIR$/scripts/shell/pellets/TreePellet.js" />
       <change beforePath="$PROJECT_DIR$/tests/CompressorDecompressor.test.js" afterPath="$PROJECT_DIR$/tests/CompressorDecompressor.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/PayloadWrapper.test.js" afterPath="$PROJECT_DIR$/tests/PayloadWrapper.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/ProgressListener.test.js" afterPath="$PROJECT_DIR$/tests/ProgressListener.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/TypeProvider.test.js" afterPath="$PROJECT_DIR$/tests/TypeProvider.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/extrospection/ArchiveExtrospector.test.js" afterPath="$PROJECT_DIR$/tests/extrospection/ArchiveExtrospector.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/extrospection/BilateralPseudoAwarenessAggressionFactor.test.js" afterPath="$PROJECT_DIR$/tests/extrospection/BilateralPseudoAwarenessAggressionFactor.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/extrospection/Extrospector.test.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tests/pellets/Pellet.test.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tests/pellets/Pelletizable.test.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tests/pellets/R5CCompliant.test.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tests/plisteners/BasicProgressListener.test.js" afterPath="$PROJECT_DIR$/tests/plisteners/BasicProgressListener.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/plisteners/CommandLineProgressListener.test.js" afterPath="$PROJECT_DIR$/tests/plisteners/CommandLineProgressListener.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/pumpdump/PumperDumper.test.js" afterPath="$PROJECT_DIR$/tests/pumpdump/PumperDumper.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/pumpdump/PumperDumperFactory.test.js" afterPath="$PROJECT_DIR$/tests/pumpdump/PumperDumperFactory.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/HardshellOverlayInterjector.test.js" afterPath="$PROJECT_DIR$/tests/shell/HardshellOverlayInterjector.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/InvulnerabilityMatrix.test.js" afterPath="$PROJECT_DIR$/tests/shell/InvulnerabilityMatrix.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/pellets/CompressionPellet.test.js" afterPath="$PROJECT_DIR$/tests/shell/pellets/CompressionPellet.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/pellets/FatwarePellet.test.js" afterPath="$PROJECT_DIR$/tests/shell/pellets/FatwarePellet.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/pellets/OraclePelletAdapter.test.js" afterPath="$PROJECT_DIR$/tests/shell/pellets/OraclePelletAdapter.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/pellets/PelletFactory.test.js" afterPath="$PROJECT_DIR$/tests/shell/pellets/PelletFactory.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/pellets/PseudoPellet.test.js" afterPath="$PROJECT_DIR$/tests/shell/pellets/PseudoPellet.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/pellets/SandersonPseudoPellet.test.js" afterPath="$PROJECT_DIR$/tests/shell/pellets/SandersonPseudoPellet.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/pellets/TreePellet.test.js" afterPath="$PROJECT_DIR$/tests/shell/pellets/TreePellet.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/typeproviders/ClossonTypeProvider.test.js" afterPath="$PROJECT_DIR$/tests/shell/typeproviders/ClossonTypeProvider.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/typeproviders/FullertonTypeProvider.test.js" afterPath="$PROJECT_DIR$/tests/shell/typeproviders/FullertonTypeProvider.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/typeproviders/LivermoreTypeProvider.test.js" afterPath="$PROJECT_DIR$/tests/shell/typeproviders/LivermoreTypeProvider.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/shell/typeproviders/OCRTTypeProvider.test.js" afterPath="$PROJECT_DIR$/tests/shell/typeproviders/OCRTTypeProvider.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/tmb/TrimodeBoolean.test.js" afterPath="$PROJECT_DIR$/tests/tmb/TrimodeBoolean.test.js" />
-      <change beforePath="$PROJECT_DIR$/tests/tmb/UnacceptableUnknowabilityError.test.js" afterPath="$PROJECT_DIR$/tests/tmb/UnacceptableUnknowabilityError.test.js" />
+      <change beforePath="$PROJECT_DIR$/tests/PayloadWrapper.test.js" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,11 +30,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="ArgValidator.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js">
+      <file leaf-file-name="CompressorDecompressor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/CompressorDecompressor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1391">
-              <caret line="298" column="73" lean-forward="false" selection-start-line="298" selection-start-column="73" selection-end-line="298" selection-end-column="73" />
+            <state relative-caret-position="27">
+              <caret line="216" column="81" lean-forward="false" selection-start-line="216" selection-start-column="81" selection-end-line="216" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".eslintrc.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.eslintrc.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringUtils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/util/StringUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="62" lean-forward="false" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sample-usage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample-usage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArgValidator.test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4401">
+              <caret line="163" column="19" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompressorDecompressor.test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/CompressorDecompressor.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,36 +94,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pellet</find>
-      <find>shit</find>
-      <find>any</find>
-      <find>this.</find>
-      <find>validateRequiredArg</find>
-      <find>validateArgType</find>
-      <find>validateArgInstOf</find>
-      <find>getArgValueType</find>
-      <find>_getArgValueType</find>
-      <find>validTypesStr</find>
-      <find>_validateArgInstOf</find>
-      <find>instOf</find>
-      <find>static</find>
-      <find>ArgValidator.</find>
-      <find>argumentsObj</find>
-      <find>_isArgPresent</find>
-      <find>_validateRequiredArg</find>
-      <find>* @param {string} argName The name of the arg; used to build meaningful error messages</find>
-      <find>@param argValue</find>
-      <find>@param {object} argValue The argument's value</find>
-      <find>argValue</find>
-      <find>last</find>
-      <find>prov</find>
-      <find>const av =</find>
-      <find>CompressionOptions</find>
-      <find>_validateArgType</find>
-      <find>_validateArgArrayType</find>
-      <find>_validateArgArrayInstOf</find>
       <find>_validateArgOneOf</find>
       <find>arrayType</find>
+      <find>ot an insta</find>
+      <find>throw new</find>
+      <find>Err(this._format</find>
+      <find>.name</find>
+      <find>.name ||</find>
+      <find>arrayInstOf</find>
+      <find>.length</find>
+      <find>console.</find>
+      <find>arraytype</find>
+      <find>testfn</find>
+      <find>testFn</find>
+      <find>module.exports = CompressorDecompressor;</find>
+      <find>Exception</find>
+      <find>new String</find>
+      <find>out.</find>
+      <find>pelletFactoryOverrideClass</find>
+      <find>new ArgValidator(</find>
+      <find>byte</find>
+      <find>bytes</find>
+      <find>StringUtils</find>
+      <find>argv</find>
+      <find>utf8ByteArrayToString</find>
+      <find>.getbytes</find>
+      <find>.getbyt</find>
+      <find>stringut</find>
+      <find>new string(</find>
+      <find>pelletFactoryOverrideConstructor</find>
+      <find>instream</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -116,10 +134,12 @@
       <replace>`CompressionPellet`</replace>
       <replace>`InvulnerabilityMatrix`</replace>
       <replace>* @param {string} argName The name of the arg; used to build meaningful error messages</replace>
+      <replace>aFunction</replace>
+      <replace>pelletFactoryOverrideConstructor</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/scripts</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -133,7 +153,6 @@
         <option value="$PROJECT_DIR$/scripts/plisteners/CommandLineProgressListener.js" />
         <option value="$PROJECT_DIR$/scripts/pellets/Pelletizable.js" />
         <option value="$PROJECT_DIR$/scripts/pellets/R5CCompliant.js" />
-        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/scripts/pellets/Pellet.js" />
         <option value="$PROJECT_DIR$/scripts/extrospection/Extrospector.js" />
         <option value="$PROJECT_DIR$/scripts/tmb/TrimodeBoolean.js" />
@@ -172,9 +191,7 @@
         <option value="$PROJECT_DIR$/tests/PayloadWrapper.test.js" />
         <option value="$PROJECT_DIR$/tests/ProgressListener.test.js" />
         <option value="$PROJECT_DIR$/tests/TypeProvider.test.js" />
-        <option value="$PROJECT_DIR$/tests/CompressorDecompressor.test.js" />
         <option value="$PROJECT_DIR$/scripts/plisteners/BasicProgressListener.js" />
-        <option value="$PROJECT_DIR$/scripts/pumpdump/PumperDumper.js" />
         <option value="$PROJECT_DIR$/scripts/pumpdump/PumperDumperFactory.js" />
         <option value="$PROJECT_DIR$/scripts/shell/pellets/CompressionPellet.js" />
         <option value="$PROJECT_DIR$/scripts/shell/pellets/FatwarePellet.js" />
@@ -182,13 +199,20 @@
         <option value="$PROJECT_DIR$/scripts/shell/pellets/SandersonPseudoPellet.js" />
         <option value="$PROJECT_DIR$/scripts/shell/pellets/TreePellet.js" />
         <option value="$PROJECT_DIR$/scripts/shell/pellets/PseudoPellet.js" />
-        <option value="$PROJECT_DIR$/scripts/shell/pellets/PelletFactory.js" />
-        <option value="$PROJECT_DIR$/scripts/shell/HardshellOverlayInterjector.js" />
-        <option value="$PROJECT_DIR$/scripts/shell/InvulnerabilityMatrix.js" />
-        <option value="$PROJECT_DIR$/scripts/CompressorDecompressor.js" />
         <option value="$PROJECT_DIR$/scripts/extrospection/ArchiveExtrospector.js" />
         <option value="$PROJECT_DIR$/scripts/TypeProvider.js" />
         <option value="$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js" />
+        <option value="$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js" />
+        <option value="$PROJECT_DIR$/tests/CompressorDecompressor.test.js" />
+        <option value="$PROJECT_DIR$/sample-usage.js" />
+        <option value="$PROJECT_DIR$/scripts/pumpdump/PumperDumper.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/tests/util/StringUtils.test.js" />
+        <option value="$PROJECT_DIR$/scripts/util/StringUtils.js" />
+        <option value="$PROJECT_DIR$/scripts/shell/InvulnerabilityMatrix.js" />
+        <option value="$PROJECT_DIR$/scripts/shell/HardshellOverlayInterjector.js" />
+        <option value="$PROJECT_DIR$/scripts/shell/pellets/PelletFactory.js" />
+        <option value="$PROJECT_DIR$/scripts/CompressorDecompressor.js" />
       </list>
     </option>
   </component>
@@ -203,6 +227,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1283" />
@@ -277,7 +304,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,12 +333,6 @@
               <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
               <item name="xqk" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="plisteners" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xqk" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
               <item name="pumpdump" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -324,44 +345,44 @@
               <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
               <item name="xqk" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="shell" type="462c0819:PsiDirectoryNode" />
-              <item name="pellets" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
               <item name="xqk" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="shell" type="462c0819:PsiDirectoryNode" />
-              <item name="typeproviders" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xqk" type="b2602c69:ProjectViewProjectNode" />
               <item name="xqk" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="tmb" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.npm/_npx/9563/lib/node_modules/create-react-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="pellet.t&#9;FILE&#9;file:///home/steve/WebstormProjects/xqk/tests/pellets/Pellet.test.js&#10;pellet.tes&#9;FILE&#9;file:///home/steve/WebstormProjects/xqk/tests/pellets/Pellet.test.js&#10;progress&#9;FILE&#9;file:///home/steve/WebstormProjects/xqk/scripts/ProgressListener.js" />
+    <property name="SearchEverywhereHistoryKey" value="sample-&#9;FILE&#9;file:///home/steve/WebstormProjects/xqk/sample-usage.js&#10;index&#9;FILE&#9;file:///home/steve/WebstormProjects/xqk/index.js&#10;pellet.t&#9;FILE&#9;file:///home/steve/WebstormProjects/xqk/tests/pellets/Pellet.test.js&#10;pellet.tes&#9;FILE&#9;file:///home/steve/WebstormProjects/xqk/tests/pellets/Pellet.test.js&#10;progress&#9;FILE&#9;file:///home/steve/WebstormProjects/xqk/scripts/ProgressListener.js" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+    <property name="javascript.nodejs.core.library.configured.version" value="8.9.4" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v8.9.4/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -379,11 +400,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.sample-usage.js">
     <configuration name="ArgValidator.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v8.9.4/bin/node" path-to-js-file="ArgValidator.js" working-dir="$PROJECT_DIR$/scripts/argvalidation" />
+    <configuration name="sample-usage.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="$USER_HOME$/.nvm/versions/node/v8.9.4/bin/node" path-to-js-file="sample-usage.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="tests/argvalidation/ArgValidator.test.js" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>$USER_HOME$/.nvm/versions/node/v8.9.4/bin/node</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js</test-file>
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.sample-usage.js" />
+      <item index="1" class="java.lang.String" itemvalue="Mocha.tests/argvalidation/ArgValidator.test.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.ArgValidator.js" />
+    </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.ArgValidator.js" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Mocha.tests/argvalidation/ArgValidator.test.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.ArgValidator.js" />
       </list>
     </recent_temporary>
   </component>
@@ -403,32 +442,69 @@
       <workItem from="1537848193093" duration="3602000" />
       <workItem from="1537945517174" duration="12536000" />
       <workItem from="1538022947080" duration="36567000" />
-      <workItem from="1538277208089" duration="5000" />
+      <workItem from="1538277208089" duration="14976000" />
+      <workItem from="1538509588690" duration="6810000" />
+      <workItem from="1538633169838" duration="8661000" />
+      <workItem from="1539049817967" duration="4061000" />
+      <workItem from="1540859568473" duration="2464000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.09.30 at 00h 32m 59s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.09.30 at 00h 33m 37s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.09.30 at 00h 34m 47s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.09.30 at 20h 29m 58s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.09.30 at 20h 30m 34s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.09.30 at 20h 31m 17s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.09.30 at 20h 31m 42s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.10.01 at 12h 50m 57s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.10.01 at 12h 51m 20s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tests_argvalidation_ArgValidator_test_js - 2018.10.01 at 12h 56m 12s.xml">
+      <configuration name="tests/argvalidation/ArgValidator.test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58140000" />
+    <option name="totallyTimeSpent" value="95107000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1283" y="-6" width="3771" height="2160" extended-state="6" />
+    <frame x="1283" y="-6" width="3753" height="2160" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25850523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25841185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46338966" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3998976" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -440,11 +516,202 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js</url>
+          <line>130</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scripts/CompressorDecompressor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/util/StringUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="62" lean-forward="false" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample-usage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4401">
+          <caret line="163" column="19" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CompressorDecompressor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/shell/HardshellOverlayInterjector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1755">
+          <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/shell/InvulnerabilityMatrix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5238">
+          <caret line="194" column="53" lean-forward="false" selection-start-line="194" selection-start-column="53" selection-end-line="194" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/util/StringUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="62" lean-forward="false" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4401">
+          <caret line="163" column="19" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample-usage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CompressorDecompressor.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4131">
+          <caret line="153" column="65" lean-forward="false" selection-start-line="153" selection-start-column="65" selection-end-line="153" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample-usage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4401">
+          <caret line="163" column="19" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CompressorDecompressor.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CompressorDecompressor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="28" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CompressorDecompressor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample-usage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4401">
+          <caret line="163" column="19" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CompressorDecompressor.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -457,6 +724,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -464,6 +732,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
           <caret line="32" column="98" lean-forward="false" selection-start-line="32" selection-start-column="98" selection-end-line="32" selection-end-column="98" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -471,6 +740,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10368">
           <caret line="384" column="12" lean-forward="false" selection-start-line="384" selection-start-column="12" selection-end-line="384" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -485,6 +755,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="19" column="5" lean-forward="false" selection-start-line="17" selection-start-column="60" selection-end-line="19" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -492,6 +763,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -503,24 +775,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/PayloadWrapper.js" />
     <entry file="file://$PROJECT_DIR$/scripts/plisteners/CommandLineProgressListener.js" />
     <entry file="file://$PROJECT_DIR$/scripts/pellets/Pelletizable.js" />
     <entry file="file://$PROJECT_DIR$/scripts/pellets/R5CCompliant.js" />
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="21" column="72" lean-forward="false" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/pellets/Pellet.js" />
     <entry file="file://$PROJECT_DIR$/scripts/extrospection/Extrospector.js" />
     <entry file="file://$PROJECT_DIR$/tests/pellets/R5CCompliant.test.js" />
@@ -674,73 +932,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/PayloadWrapper.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ProgressListener.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/TypeProvider.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CompressorDecompressor.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/extrospection/BilateralPseudoAwarenessAggressionFactor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/plisteners/BasicProgressListener.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="854">
-          <caret line="111" column="7" lean-forward="true" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/pumpdump/PumperDumper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="908">
-          <caret line="123" column="11" lean-forward="false" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/pumpdump/PumperDumperFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/shell/pellets/CompressionPellet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1016">
-          <caret line="123" column="59" lean-forward="true" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/shell/pellets/FatwarePellet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -772,13 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/shell/pellets/PelletFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="101" column="68" lean-forward="false" selection-start-line="101" selection-start-column="68" selection-end-line="101" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/shell/typeproviders/ClossonTypeProvider.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -807,45 +995,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/shell/InvulnerabilityMatrix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="184" column="46" lean-forward="true" selection-start-line="184" selection-start-column="46" selection-end-line="184" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/tmb/TrimodeBoolean.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2295">
           <caret line="85" column="21" lean-forward="true" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/TypeProvider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ProgressListener.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3267">
-          <caret line="121" column="71" lean-forward="false" selection-start-line="121" selection-start-column="71" selection-end-line="121" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/extrospection/ArchiveExtrospector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/CompressorDecompressor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="529" column="13" lean-forward="false" selection-start-line="529" selection-start-column="13" selection-end-line="529" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -856,17 +1009,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/shell/HardshellOverlayInterjector.js">
+    <entry file="file://$PROJECT_DIR$/tests/PayloadWrapper.test.js" />
+    <entry file="file://$PROJECT_DIR$/sample-usage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ProgressListener.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/extrospection/BilateralPseudoAwarenessAggressionFactor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/argvalidation/ArgValidator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1391">
-          <caret line="298" column="73" lean-forward="false" selection-start-line="298" selection-start-column="73" selection-end-line="298" selection-end-column="73" />
+        <state relative-caret-position="2357">
+          <caret line="153" column="65" lean-forward="false" selection-start-line="153" selection-start-column="65" selection-end-line="153" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/shell/pellets/FatwarePellet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/shell/pellets/CompressionPellet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="122" column="8" lean-forward="false" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/pumpdump/PumperDumperFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/pumpdump/PumperDumper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ProgressListener.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="112" column="49" lean-forward="false" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/plisteners/BasicProgressListener.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="99" column="8" lean-forward="false" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/extrospection/ArchiveExtrospector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="203" column="8" lean-forward="false" selection-start-line="203" selection-start-column="8" selection-end-line="203" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/TypeProvider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="967">
+          <caret line="46" column="61" lean-forward="true" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/argvalidation/ArgValidator.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4401">
+          <caret line="163" column="19" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/util/StringUtils.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/util/StringUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="62" lean-forward="false" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/shell/pellets/PelletFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="112" column="25" lean-forward="false" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/shell/InvulnerabilityMatrix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/shell/HardshellOverlayInterjector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CompressorDecompressor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="216" column="81" lean-forward="false" selection-start-line="216" selection-start-column="81" selection-end-line="216" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CompressorDecompressor.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

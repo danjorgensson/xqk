@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/danjorgensson/xqk/issues"
   },
-  "homepage": "https://github.com/danjorgensson/xqk#readme"
+  "homepage": "https://github.com/danjorgensson/xqk#readme",
+  "dependencies": {
+    "utf8-string-bytes": "^1.0.3"
+  }
 }

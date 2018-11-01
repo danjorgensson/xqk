@@ -1,5 +1,8 @@
 module.exports = {
-    extrospection: {
+    argvalidation: {
+        ArgValidator: require('./scripts/argvalidation/ArgValidator'),
+    },
+/*    extrospection: {
         ArchiveExtrospector: require('./scripts/extrospection/ArchiveExtrospector'),
         BilateralPseudoAwarenessAggressionFactor: require('./scripts/extrospection/BilateralPseudoAwarenessAggressionFactor'),
         Extrospector: require('./scripts/extrospection/Extrospector')
@@ -40,8 +43,13 @@ module.exports = {
         TrimodeBoolean: require('./scripts/tmb/TrimodeBoolean'),
         UnacceptableUnknowabilityError: require('./scripts/tmb/UnacceptableUnknowabilityError')
     },
+    util: {
+        TrimodeBoolean: require('./scripts/util/StringUtils')
+    },
+
+    */
     CompressorDecompressor: require('./scripts/CompressorDecompressor'),
-    PayloadWrapper: require('./scripts/PayloadWrapper'),
-    ProgressListener: require('./scripts/ProgressListener'),
-    TypeProvider: require('./scripts/TypeProvider')
+    //PayloadWrapper: require('./scripts/PayloadWrapper'),
+    //ProgressListener: require('./scripts/ProgressListener'),
+    //TypeProvider: require('./scripts/TypeProvider')
 };

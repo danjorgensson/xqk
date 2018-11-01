@@ -1,21 +1,53 @@
 /**
  * Class which performs Lessing/Cooper-style type-checking (optional on a per-param basis) and other validation on
- * the args passed to a unction by exampling the implicit `arguments` object.  This class is not meant to validate
- * user input, but to ensure that developers are passing values which they think they're passing.  Note: this class
- * cannot currently validate arrow functions, because they do not have an implicit `arguments` object (or rather,
- * they inherit one from the enclosing scope).  It also does not currently handle rest params (e.g.
- * `function(a, b, ...restParam) {}`).
+ * the args passed to a function by examining either the implicit `arguments` object (for non-arrow functions), or
+ * an array of the passed params (for arrow functions, which do not have an implicit `arguments` object).  This class
+ * is not meant to validate user input, but to ensure that developers are passing values which they think they're
+ * passing.
+ *
+ * Thus, validation of arrow functions and non-arrow functions must be handled differently.  Here's usage with a
+ * non-arrow function (see `validate()` docs below for details on what the props in the object arrays refer to):
+ *
+ * <pre>
+ * function someFunction(aRequiredString, aRequiredNumber, anOptionalBoolean) {
+ *     new ArgValidator(arguments).validate([ // pass `arguments` to the constructor
+ *          {name: 'aRequiredString', reqd: true, type: 'string'},
+ *          {name: 'aRequiredNumber', reqd: true, type: 'number'},
+ *          {name: 'anOptionalBoolean', reqd: true, type: 'boolean'}
+ *     ]);
+ * }
+ * </pre>
+ * When validating an arrow function, the array of objects passed to `validate()` remains the same, but instead of
+ * passing `arguments` to the constructor, we pass an array of argument values, like this (conveniently, it's just
+ * a copy/paste from the function's signature; just remember to update the array if the signature changes):
+ *
+ * <pre>
+ * const someFunction = (aRequiredString, aRequiredNumber, anOptionalBoolean) => {
+ *     new ArgValidator([aRequiredString, aRequiredNumber, anOptionalBoolean]).validate([ // pass an array
+ *          {name: 'aRequiredString', reqd: true, type: 'string'},
+ *          {name: 'aRequiredNumber', reqd: true, type: 'number'},
+ *          {name: 'anOptionalBoolean', reqd: true, type: 'boolean'}
+ *     ]);
+ * }
+ * </pre>
+ *
+ * Note: methods of classes defined as `doSomething() {...}` (or `static doSomething() {...}`) count as  non-arrow
+ * functions.
+ *
  */
 
 class ArgValidator {
 
     /**
      * Construct an ArgValidator.
-     * @param {object} argumentsObj The implicit `arguments` object
+     * @param {object|array} args Either the implicit `arguments` object present in all non-arrow functions, or an
+     * array of all arg values for arrow functions.  Note that arrow functions do have access to an implicit
+     * `arguments` object, but it belongs to the parent scope.
      * @constructor
      */
-    constructor(argumentsObj) {
-        this.argumentsObj = argumentsObj;
+    constructor(args) {
+        this.argsArr = Array.from(args);
+
     }
 
     /**
@@ -70,9 +102,9 @@ class ArgValidator {
                 + `missing one or more of these required properties: name, reqd, type.`);
             }
 
-            const argsCount = this.argumentsObj.length;
+            const argsCount = this.argsArr.length;
 
-            const argValue = (idx < argsCount ? this.argumentsObj[idx] : undefined);
+            const argValue = (idx < argsCount ? this.argsArr[idx] : undefined);
 
             const argIsRequired = (argDetail.reqd === true);
 
@@ -113,9 +145,16 @@ class ArgValidator {
 
                 // ***** CUSTOM CHECK:
                 if (argDetail.testFn) {
-                    const errorMsg = argDetail.testFn(argValue);
+                    let errorMsg = null;
+                    try {
+                        errorMsg = argDetail.testFn(argValue);
+                    } catch (e) {
+                        throw new Error(`The testFn (${this._formatForErr(argDetail.testFn)}) threw an error, `
+                            + `which should not happen; for invalid input, a testFn should return an error msg, `
+                            + `otherwise null. The error was: ${e}`);
+                    }
                     if (errorMsg) {
-                        throw new Error(`The '${argDetail.name}' value (${argValue}) is invalid: ${errorMsg}`);
+                        throw new Error(`The '${argDetail.name}' value (${this._formatForErr(argValue)}) is invalid: ${errorMsg}`);
                     }
                 }
             }
@@ -132,7 +171,7 @@ class ArgValidator {
      * @private
      */
     _isArgPresent(argumentsIdx) {
-        return (argumentsIdx < this.argumentsObj.length);
+        return (argumentsIdx < this.argsArr.length);
     }
 
     /**
@@ -144,7 +183,7 @@ class ArgValidator {
      */
     _validateRequiredArg(argName, argumentsIdx) {
         if (!this._isArgPresent(argumentsIdx)) {
-            throw new Error(`The '${argName}' arg was not supplied (or was undefined); this arg is required.`);
+            throw new Error(`The required '${argName}' arg was not passed.`);
         }
     }
 
@@ -169,7 +208,7 @@ class ArgValidator {
 
         // Finally, we can do our test:
         if (validTypes.indexOf(argValueType) === -1) {
-            throw new Error(`Type of '${argName}' is '${argValueType}' (value = ${argValue}), which is not valid; type `
+            throw new Error(`Type of '${argName}' is '${argValueType}' (value = ${this._formatForErr(argValue)}), which is not valid; type `
                 + `must be one of: ${validTypes}`);
         }
     };
@@ -186,7 +225,7 @@ class ArgValidator {
         arr.forEach((el, idx) => {
             const elType = this._getType(el);
             if (elType !== requiredElementType) {
-                throw new Error(`Type of element ${idx} of array '${argName}' is '${elType}' (value = ${el}), which is `
+                throw new Error(`Type of element ${idx} of array '${argName}' is '${elType}' (value = ${this._formatForErr(el)}), which is `
                 + `not valid; type must be '${requiredElementType}'`);
             }
         });
@@ -205,7 +244,8 @@ class ArgValidator {
         // We only test objects for this test:
         if (this._getType(argValue) === 'object') {
             if (!(argValue instanceof constructorFn)) {
-                throw new Error(`The arg '${argName}' (value = ${argValue}) is not an instance of ${constructorFn}.`);
+                throw new Error(`The arg '${argName}' (value = ${this._formatForErr(argValue)}) is not an instance of `
+                    + `${this._formatForErr(constructorFn)}.`);
             }
         }
     }
@@ -221,8 +261,8 @@ class ArgValidator {
     _validateArgArrayInstOf(argName, arr, constructorFn) {
         arr.forEach((el, idx) => {
             if (!(el instanceof constructorFn)) {
-                throw new Error(`Element ${idx} of array '${argName}' (value = ${el}), is not an instance of `
-                    + `'${constructorFn}'`);
+                throw new Error(`Element ${idx} of array '${argName}' (value = ${this._formatForErr(el)}), is not an instance of `
+                    + `${this._formatForErr(constructorFn)}`);
             }
         });
     }
@@ -237,7 +277,45 @@ class ArgValidator {
      */
     _validateArgOneOf(argName, argValue, validValuesArr) {
         if (validValuesArr.indexOf(argValue) === -1) {
-            throw new Error(`The arg '${argName}' (value = ${argValue}) is not one of ${validValuesArr}.`);
+            throw new Error(`The arg '${argName}' (value = ${this._formatForErr(argValue)}) is not one `
+             + `of ${validValuesArr}.`);
+        }
+    }
+
+    _formatForErr(val) {
+        const type = this._getType(val);
+        switch (type) {
+            case 'null':
+            case 'undefined': {
+                return `[${val}]`;
+            }
+            case 'string': {
+                return `'${val}'`;
+            }
+            case 'function': {
+                return (val.name || `${val}`.replace(/\r/g, ' ').replace(/\n/g, ' ').substring(0, 32) + '...');
+            }
+            case 'object': {
+                if (val.toString && val.toString().indexOf('object Object') === -1) {
+                    return val.toString();
+                }
+                let s = '';
+                let first = true;
+                for (let prop in val) {
+                    if (!val.hasOwnProperty(prop)) {
+                        continue;
+                    }
+                    s += `${first ? '' : ','}${prop}:${val[prop]}`;
+                    first = false;
+                }
+                return `{${s.substring(0, 64)}}`;
+            }
+            case 'array': {
+                return `[${('' + val).substring(0, 64)}]`;
+            }
+            default: {
+                return val;
+            }
         }
     }
 
@@ -286,8 +364,11 @@ class ArgValidator {
 
 
 
-function tryMe(reqdString, reqdBoolean, reqdObjOrNull, reqdNumber, requiredSymbolOrStr, optionalFunction, optionalArr,
-               optionalDate, optionalStrArr, optionalDateArr) {
+/*
+
+function tryMe(reqdString, reqdBoolean, reqdObjOrNull, reqdNumber, requiredSymbolOrStr, optionalFunction, optionalArr, optionalDate, optionalStrArr, optionalDateArr) {
+//const tryMe = (reqdString, reqdBoolean, reqdObjOrNull, reqdNumber, requiredSymbolOrStr, optionalFunction, optionalArr, optionalDate, optionalStrArr, optionalDateArr) => {
+    //const av = new ArgValidator([reqdString, reqdBoolean, reqdObjOrNull, reqdNumber, requiredSymbolOrStr, optionalFunction, optionalArr, optionalDate, optionalStrArr, optionalDateArr]).validate([
     const av = new ArgValidator(arguments).validate([
         {name: 'reqdString', reqd: true, type: 'string'},
         {name: 'reqdBoolean', reqd: true, type: 'boolean'},
@@ -297,13 +378,15 @@ function tryMe(reqdString, reqdBoolean, reqdObjOrNull, reqdNumber, requiredSymbo
         {name: 'optionalFunction', reqd: false, type: 'function'},
         {name: 'optionalArr', reqd: false, type: 'array'},
         {name: 'optionalDate', reqd: false, type: 'object,undefined', instOf: Date},
-        {name: 'optionalStrArr', reqd: false, type: 'string', arrayType: 'string'},
-        {name: 'optionalDateArr', reqd: false, type: 'object', arrayInstOf: Date},
-        {name: 'optional1or2or3Number', reqd: false, type: 'number', oneOf: [1, 2, 3]},
+        {name: 'optionalStrArr', reqd: false, type: 'array', arrayType: 'string'},
+        {name: 'optionalDateArr', reqd: false, type: 'array', arrayInstOf: Date},
+        {name: 'optional1or2or3Number', reqd: true, type: 'number', oneOf: [1, 2, 3]},
     ]);
 }
 
-tryMe('', true, null, 1, Symbol(2), function() {}, []);
+tryMe('', false, null, 1, Symbol(2), function() {}, [], new Date(), ['this','is','an','array'],
+    [new Date(), new Date(), new Date()], 2);
+*/
 
 
 

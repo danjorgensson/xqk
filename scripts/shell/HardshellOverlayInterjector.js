@@ -23,20 +23,20 @@ class HardshellOverlayInterjector {
      * @param matrix An `InvulnerabilityMatrix` instance
      * @param progressListener The current `ProgressListener`
      * @param extrospector The current Extrospector-implementation instance.
-     * @param pelletFactoryOverrideClass If not null, force the pellet factory to return pellets of this type
+     * @param pelletFactoryOverrideConstructor If not null, force the pellet factory to return pellets of this type
      * @param {TrimodeBoolean} compress True to compress, false to decompress
      * @return The hard-shell contingency overlay to be used to enfold the archive
      */
 
     static generateEnfolder(pelletCount, algo, matrix, progressListener, extrospector,
-                                          pelletFactoryOverrideClass, compress) {
+                                          pelletFactoryOverrideConstructor, compress) {
         new ArgValidator(arguments).validate([
             {name: 'pelletCount', reqd: true, type: 'number'},
-            {name: 'algo', reqd: true, type: 'array'},
+            {name: 'algo', reqd: true, type: 'array', arrayInstOf: 'number'},
             {name: 'matrix', reqd: true, type: 'object', instOf: InvulnerabilityMatrix},
             {name: 'progressListener', reqd: true, type: 'object', instOf: ProgressListener},
             {name: 'extrospector', reqd: true, type: 'object', instOf: ArchiveExtrospector},
-            {name: 'pelletFactoryOverrideClass', reqd: true, type: 'function, null'},
+            {name: 'pelletFactoryOverrideConstructor', reqd: true, type: 'function, null'},
             {name: 'compress', reqd: true, type: 'object', instOf: TrimodeBoolean},
         ]);
 
@@ -44,13 +44,13 @@ class HardshellOverlayInterjector {
             progressListener.outPrintln("Pelletizing overlay (ct=" + pelletCount + ")...");
         }
         matrix.reflectPellets(PelletFactory.getPellets(pelletCount, SANDERSONIZE_INTERVAL, false, MAX_INITIATORS,
-            progressListener, pelletFactoryOverrideClass, compress.booleanValue()));
+            progressListener, pelletFactoryOverrideConstructor, compress.booleanValue()));
         if (compress.booleanValue()) {
             progressListener.outPrintln('');
         }
               
         const b = `${INITIAL_OVERLAY_CHARS}${algo}${matrix.getGridBytes()}${matrix.getPelletBytes()}${SEALANT}`;
-        return b.getBytes();
+        return StringUtils.stringToByteArray(b);
     }
 
 
@@ -63,12 +63,12 @@ class HardshellOverlayInterjector {
 const MAX_INITIATORS = 10;
 /**
  * How often, in milliseconds, the overlay should re-Sandersonize itself when its Koroviev velocity is
- * not near-zero with respect to the local frame.
+ * not near-zero with respect to the local frame or frames.
  */
 const SANDERSONIZE_INTERVAL = 4;
 
-const INITIAL_OVERLAY_CHARS = 'LOCKB>>:OvMtx(:Proc/00000000|(\"'.getBytes();
-const SEALANT = "\")).call(\"dec\").rprot(UNLOCKB)>>".getBytes();
+const INITIAL_OVERLAY_CHARS = StringUtils.stringToByteArray('LOCKB>>:OvMtx(:Proc/00000000|(\"');
+const SEALANT = StringUtils.stringToByteArray('\")).call(\"dec\").rprot(UNLOCKB)>>');
 
 
 
